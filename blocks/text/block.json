@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/text",
+  "title": "Text",
+  "description": "",
+  "category": "sinargroup",
+  "keywords": ["job", "listing"],
+  "viewScript": ["blocks/text"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

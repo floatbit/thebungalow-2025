@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/quote",
+  "title": "Quote",
+  "description": "",
+  "category": "<category>",
+  "keywords": ["quote"],
+  "_viewScript": ["blocks/quote"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

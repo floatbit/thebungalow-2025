@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/events",
+  "title": "Events",
+  "description": "",
+  "category": "<category>",
+  "keywords": ["events"],
+  "_viewScript": ["blocks/events"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

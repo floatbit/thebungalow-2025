@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/image",
+  "title": "Image",
+  "description": "",
+  "category": "<category>",
+  "keywords": ["image"],
+  "_viewScript": ["blocks/image"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

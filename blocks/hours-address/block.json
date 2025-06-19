@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/hours-address",
+  "title": "Hours + Address",
+  "description": "",
+  "category": "<category>",
+  "keywords": ["hours-address"],
+  "_viewScript": ["blocks/hours-address"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

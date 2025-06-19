@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/text-intro",
+  "title": "Text Intro",
+  "description": "",
+  "category": "<category>",
+  "keywords": ["text-intro"],
+  "_viewScript": ["blocks/text-intro"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/location-switchboard",
+  "title": "Location Switchboard",
+  "description": "",
+  "category": "<category>",
+  "keywords": ["location-switchboard"],
+  "_viewScript": ["blocks/location-switchboard"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

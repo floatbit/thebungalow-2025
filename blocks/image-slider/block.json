@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/image-slider",
+  "title": "Image Slider",
+  "description": "",
+  "category": "<category>",
+  "keywords": ["image-slider"],
+  "_viewScript": ["blocks/image-slider"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

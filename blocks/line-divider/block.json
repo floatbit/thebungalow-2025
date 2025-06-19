@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/line-divider",
+  "title": "Line Divider",
+  "description": "",
+  "category": "<category>",
+  "keywords": ["line-divider"],
+  "_viewScript": ["blocks/line-divider"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

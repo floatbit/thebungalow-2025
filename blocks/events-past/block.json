@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/events-past",
+  "title": "Events Past",
+  "description": "",
+  "category": "<category>",
+  "keywords": ["events-past"],
+  "_viewScript": ["blocks/events-past"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

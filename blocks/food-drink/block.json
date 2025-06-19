@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/food-drink",
+  "title": "Food + Drink",
+  "description": "",
+  "category": "<category>",
+  "keywords": ["food-drink"],
+  "_viewScript": ["blocks/food-drink"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

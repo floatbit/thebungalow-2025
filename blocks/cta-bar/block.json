@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/cta-bar",
+  "title": "CTA Bar",
+  "description": "",
+  "category": "<category>",
+  "keywords": ["cta-bar"],
+  "_viewScript": ["blocks/cta-bar"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

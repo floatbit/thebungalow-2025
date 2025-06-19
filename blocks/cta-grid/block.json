@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/cta-grid",
+  "title": "CTA Grid",
+  "description": "",
+  "category": "<category>",
+  "keywords": ["cta-grid"],
+  "_viewScript": ["blocks/cta-grid"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

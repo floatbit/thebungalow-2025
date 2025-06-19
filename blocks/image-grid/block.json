@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/image-grid",
+  "title": "Image Grid",
+  "description": "",
+  "category": "<category>",
+  "keywords": ["image-grid"],
+  "_viewScript": ["blocks/image-grid"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}
