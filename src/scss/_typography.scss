@@ -3,31 +3,34 @@
     @apply font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+  p, %p, .p {
+    @apply mb-4;
+    @include pixelsToResponsiveUnit(font-size, 12px, 14px, 14px);
+    line-height: 1.5;
   }
 
-  h1 {
-    @apply text-5xl;
+  h1, h2, h3, h4, h5 {
+    @apply font-bold uppercase;
   }
 
-  h2 {
-    @apply text-4xl;
+  h1, %h1, .h1 {
+    @include pixelsToResponsiveUnit(font-size, 36px, 64px, 64px);
   }
 
-  h3 {
-    @apply text-3xl;
+  h2, %h2, .h2 {
+    @include pixelsToResponsiveUnit(font-size, 36px, 48px, 48px);
   }
 
-  h4 {
-    @apply text-2xl;
+  h3, %h3, .h3 {
+    @include pixelsToResponsiveUnit(font-size, 28px, 32px, 32px);
   }
 
-  h5 {
-    @apply text-xl;
+  h4, %h4, .h4 {
+    @include pixelsToResponsiveUnit(font-size, 24px, 24px, 24px);
   }
 
-  h6 {
-    @apply text-lg;
+  h5, %h5, .h5 {
+    @include pixelsToResponsiveUnit(font-size, 16px, 20px, 20px);
   }
+
 }

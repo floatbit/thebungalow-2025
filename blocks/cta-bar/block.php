@@ -27,9 +27,10 @@ if ( ! empty( $block['align'] ) ) {
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
-    <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/cta-bar
-        </h2>
+    <div class="block bg-secondary text-white">
+        <div class="flex items-center justify-center gap-4 py-4">
+            <p class="text-secondary-dark uppercase h4 md:mb-0">Stay in the know.</p>
+            <a class="btn bg-secondary-dark inline-block px-4 py-2 uppercase h5" href="#">Subscribe</a>
+        </div>
     </div>
 </div>

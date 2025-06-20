@@ -1,5 +1,5 @@
 /**
- * Container Plugin - modifies Tailwind’s default container.
+ * Container Plugin - modifies Tailwind's default container.
  */
 const containerStyles = ({ addComponents }) => {
   const containerBase = {
@@ -60,11 +60,13 @@ module.exports = {
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
     },
-    // extend: {
-    //   colors: {
-    //     primary: '#0069FF'
-    //   }
-    // },
+    extend: {
+      colors: {
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        'secondary-dark': 'var(--color-secondary-dark)',
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),

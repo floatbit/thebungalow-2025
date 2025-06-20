@@ -28,8 +28,7 @@ if ( ! empty( $block['align'] ) ) {
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/text
-        </h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint cumque, asperiores nihil, quisquam sequi cum qui consectetur, possimus nulla ea dolore earum. Deleniti eum corporis incidunt molestias ut, atque rem?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint cumque, asperiores nihil, quisquam sequi cum qui consectetur, possimus nulla ea dolore earum. Deleniti eum corporis incidunt molestias ut, atque rem?</p>
     </div>
 </div>

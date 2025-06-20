@@ -1,0 +1,82 @@
+{
+    "key": "group_6855714bbcc5c",
+    "title": "Taxonomy: Location",
+    "fields": [
+        {
+            "key": "field_6855714bf5301",
+            "label": "Primary Color",
+            "name": "primary_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#A5D1B9",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_68557163f5302",
+            "label": "Secondary Color",
+            "name": "secondary_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#6BB7D2",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_685574fb928ea",
+            "label": "Secondary Dark Color",
+            "name": "secondary_dark_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#1D5163",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "location"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1750431000
+}

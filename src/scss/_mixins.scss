@@ -1,0 +1,36 @@
+@use 'sass:math';
+
+$html-font-size: 16px;
+
+@function strip-units($number) {
+  @return math.div($number, ($number * 0 + 1));
+}
+
+@function rem($size) {
+  $remSize: math.div($size, $html-font-size);
+  @return #{$remSize}rem;
+}
+
+@function calculateClamp(
+  $minimum,
+  $preferred,
+  $maximum,
+  $preferred_viewport_width: 1200px
+) {
+  $clamp_parameter_1: rem($minimum);
+  $clamp_parameter_2: strip-units((math.div(($preferred + 0), $preferred_viewport_width)) * 100) * 1vw;
+  $clamp_parameter_3: rem($maximum);
+
+  @return clamp(#{$clamp_parameter_1}, #{$clamp_parameter_2}, #{$clamp_parameter_3});
+}
+
+// @see https://www.rapiddg.com/article/fluid-typography-css-sass
+@mixin pixelsToResponsiveUnit(
+  $property_name,
+  $minimum,
+  $preferred,
+  $maximum,
+  $preferred_viewport_width: 1440px
+) {
+  #{$property_name}: calculateClamp($minimum, $preferred, $maximum, $preferred_viewport_width);
+}

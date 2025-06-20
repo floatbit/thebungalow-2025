@@ -33,3 +33,66 @@ add_action('wp_enqueue_scripts', function () {
     // If needed, separate the script per block
     wp_register_script('blocks/text', assets_url('/dist/blocks/text.js'), ['jquery'], null, true);
 });
+
+/**
+ * Output location-based colors from ACF taxonomy fields
+ */
+function output_location_colors() {
+    $primary_color = null;
+    $secondary_color = null;
+    $secondary_dark_color = null;
+    
+    // Get current post ID
+    $post_id = get_the_ID();
+    
+    if ($post_id) {
+        // Get location taxonomy terms for current post
+        $location_terms = get_the_terms($post_id, 'location');
+        
+        if ($location_terms && !is_wp_error($location_terms)) {
+            // Try to get colors from the first location term
+            $location_term = $location_terms[0];
+            
+            // Check if current term has colors defined
+            $primary_color = get_field('primary_color', 'location_' . $location_term->term_id);
+            $secondary_color = get_field('secondary_color', 'location_' . $location_term->term_id);
+            $secondary_dark_color = get_field('secondary_dark_color', 'location_' . $location_term->term_id);
+        }
+        
+        // If no colors found on current post, check parent post
+        if (!$primary_color || !$secondary_color || !$secondary_dark_color) {
+            $parent_post_id = wp_get_post_parent_id($post_id);
+            
+            if ($parent_post_id) {
+                $parent_location_terms = get_the_terms($parent_post_id, 'location');
+                
+                if ($parent_location_terms && !is_wp_error($parent_location_terms)) {
+                    $parent_location_term = $parent_location_terms[0];
+                    
+                    $primary_color = $primary_color ?: get_field('primary_color', 'location_' . $parent_location_term->term_id);
+                    $secondary_color = $secondary_color ?: get_field('secondary_color', 'location_' . $parent_location_term->term_id);
+                    $secondary_dark_color = $secondary_dark_color ?: get_field('secondary_dark_color', 'location_' . $parent_location_term->term_id);
+                }
+            }
+        }
+    }
+    
+    // Set default colors if none found
+    $primary_color = $primary_color ?: '#3B82F6'; // Default blue
+    $secondary_color = $secondary_color ?: '#EF4444'; // Default red
+    $secondary_dark_color = $secondary_dark_color ?: '#DC2626'; // Default dark red
+    
+    // Output CSS custom properties
+    echo '<style>';
+    echo ':root {';
+    echo '  --color-primary: ' . $primary_color . ';';
+    echo '  --color-secondary: ' . $secondary_color . ';';
+    echo '  --color-secondary-dark: ' . $secondary_dark_color . ';';
+    echo '}';
+    echo '</style>';
+}
+
+/**
+ * Hook to output location colors in wp_head
+ */
+add_action('wp_head', 'output_location_colors');
