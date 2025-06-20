@@ -39,6 +39,7 @@ add_action('wp_enqueue_scripts', function () {
  */
 function output_location_colors() {
     $primary_color = null;
+    $primary_dark_color = null;
     $secondary_color = null;
     $secondary_dark_color = null;
     
@@ -55,12 +56,13 @@ function output_location_colors() {
             
             // Check if current term has colors defined
             $primary_color = get_field('primary_color', 'location_' . $location_term->term_id);
+            $primary_dark_color = get_field('primary_dark_color', 'location_' . $location_term->term_id);
             $secondary_color = get_field('secondary_color', 'location_' . $location_term->term_id);
             $secondary_dark_color = get_field('secondary_dark_color', 'location_' . $location_term->term_id);
         }
         
         // If no colors found on current post, check parent post
-        if (!$primary_color || !$secondary_color || !$secondary_dark_color) {
+        if (!$primary_color || !$primary_dark_color || !$secondary_color || !$secondary_dark_color) {
             $parent_post_id = wp_get_post_parent_id($post_id);
             
             if ($parent_post_id) {
@@ -70,6 +72,7 @@ function output_location_colors() {
                     $parent_location_term = $parent_location_terms[0];
                     
                     $primary_color = $primary_color ?: get_field('primary_color', 'location_' . $parent_location_term->term_id);
+                    $primary_dark_color = $primary_dark_color ?: get_field('primary_dark_color', 'location_' . $parent_location_term->term_id);
                     $secondary_color = $secondary_color ?: get_field('secondary_color', 'location_' . $parent_location_term->term_id);
                     $secondary_dark_color = $secondary_dark_color ?: get_field('secondary_dark_color', 'location_' . $parent_location_term->term_id);
                 }
@@ -79,6 +82,7 @@ function output_location_colors() {
     
     // Set default colors if none found
     $primary_color = $primary_color ?: '#3B82F6'; // Default blue
+    $primary_dark_color = $primary_dark_color ?: '#1D4ED8'; // Default dark blue
     $secondary_color = $secondary_color ?: '#EF4444'; // Default red
     $secondary_dark_color = $secondary_dark_color ?: '#DC2626'; // Default dark red
     
@@ -86,6 +90,7 @@ function output_location_colors() {
     echo '<style>';
     echo ':root {';
     echo '  --color-primary: ' . $primary_color . ';';
+    echo '  --color-primary-dark: ' . $primary_dark_color . ';';
     echo '  --color-secondary: ' . $secondary_color . ';';
     echo '  --color-secondary-dark: ' . $secondary_dark_color . ';';
     echo '}';
@@ -96,3 +101,26 @@ function output_location_colors() {
  * Hook to output location colors in wp_head
  */
 add_action('wp_head', 'output_location_colors');
+
+/**
+ * Allow SVG uploads to media library
+ */
+function allow_svg_uploads($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'allow_svg_uploads');
+
+/**
+ * Fix SVG display in media library
+ */
+function fix_svg_display() {
+    echo '<style>
+        .attachment-266x266, .thumbnail img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>';
+}
+add_action('admin_head', 'fix_svg_display');

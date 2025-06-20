@@ -22,6 +22,25 @@
             "allow_in_bindings": 0
         },
         {
+            "key": "field_68557e21b58f5",
+            "label": "Primary Dark Color",
+            "name": "primary_dark_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#314339",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
             "key": "field_68557163f5302",
             "label": "Secondary Color",
             "name": "secondary_color",
@@ -58,6 +77,32 @@
             "enable_opacity": 0,
             "return_format": "string",
             "allow_in_bindings": 0
+        },
+        {
+            "key": "field_685598a049417",
+            "label": "Logo",
+            "name": "logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -78,5 +123,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1750431000
+    "modified": 1750440103
 }

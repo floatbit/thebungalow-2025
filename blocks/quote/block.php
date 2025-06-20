@@ -27,9 +27,11 @@ if ( ! empty( $block['align'] ) ) {
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
-    <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/quote
-        </h2>
+    <div class="bg-secondary text-secondary-dark py-32">
+        <div class="container">
+            <h2 class="pt-[100px] pb-[100px]">
+                TODO: blocks/quote
+            </h2>
+        </div>
     </div>
 </div>

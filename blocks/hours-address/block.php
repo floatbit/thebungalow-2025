@@ -27,9 +27,29 @@ if ( ! empty( $block['align'] ) ) {
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
-    <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/hours-address
-        </h2>
+    <div class="bg-secondary py-32">
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <div class="w-1/2 text-secondary-dark text-center">
+                    <?php for($i=0;$i<3;$i++): ?>
+                        <p class="h3 mb-0">Wednesday–Friday</p>
+                        <p class="h2">2pm–2am</p>
+                    <?php endfor; ?>
+                </div>
+                <div class="w-1/2">
+                    <div class="bg-white text-primary-dark p-10 text-center rotate-3">
+                        <p>Always Close By</p>
+                        <p class="h3">6400 E Pacific Coast Hwy #200 <br>Long Beach, CA 90803</p>
+                        <p>
+                            <img src="https://placehold.co/600x400/EEE/31343C" alt="" class="w-full">
+                        </p>
+                        <p class="h2">GET DIRECTIONS</p>
+                        <p>(Last leaf of gold vanishes from the sea-curve.)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+    
 </div>

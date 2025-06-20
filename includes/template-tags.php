@@ -22,3 +22,40 @@ function assets_url($path)
         return get_template_directory_uri() . $path;
     }
 }
+
+function get_location_logo() {
+    $logo = null;
+    
+    // Get current post ID
+    $post_id = get_the_ID();
+    
+    if ($post_id) {
+        // Get location taxonomy terms for current post
+        $location_terms = get_the_terms($post_id, 'location');
+        
+        if ($location_terms && !is_wp_error($location_terms)) {
+            // Try to get logo from the first location term
+            $location_term = $location_terms[0];
+            
+            // Check if current term has logo defined
+            $logo = get_field('logo', 'location_' . $location_term->term_id);
+        }
+        
+        // If no logo found on current post, check parent post
+        if (!$logo) {
+            $parent_post_id = wp_get_post_parent_id($post_id);
+            
+            if ($parent_post_id) {
+                $parent_location_terms = get_the_terms($parent_post_id, 'location');
+                
+                if ($parent_location_terms && !is_wp_error($parent_location_terms)) {
+                    $parent_location_term = $parent_location_terms[0];
+                    
+                    $logo = get_field('logo', 'location_' . $parent_location_term->term_id);
+                }
+            }
+        }
+    }
+    
+    return $logo;
+}

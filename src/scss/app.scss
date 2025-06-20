@@ -7,6 +7,9 @@
 @import 'typography';
 @import 'blocks/index';
 
+body {
+  @apply text-black bg-white;
+}
 .image-test {
   @apply w-80 h-80 bg-cover;
   background-image: url('./images/sample-image.jpg');

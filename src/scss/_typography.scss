@@ -14,22 +14,27 @@
   }
 
   h1, %h1, .h1 {
+    @apply mb-5 uppercase;
     @include pixelsToResponsiveUnit(font-size, 36px, 64px, 64px);
   }
 
   h2, %h2, .h2 {
+    @apply mb-5 uppercase;
     @include pixelsToResponsiveUnit(font-size, 36px, 48px, 48px);
   }
 
   h3, %h3, .h3 {
+    @apply mb-5 uppercase;
     @include pixelsToResponsiveUnit(font-size, 28px, 32px, 32px);
   }
 
   h4, %h4, .h4 {
+    @apply mb-5 uppercase;
     @include pixelsToResponsiveUnit(font-size, 24px, 24px, 24px);
   }
 
   h5, %h5, .h5 {
+    @apply mb-5 uppercase;
     @include pixelsToResponsiveUnit(font-size, 16px, 20px, 20px);
   }
 
