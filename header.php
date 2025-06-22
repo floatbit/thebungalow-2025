@@ -11,6 +11,8 @@
 <body <?php body_class('antialiased'); ?>>
 
 
-    <?php get_template_part('parts/section-header'); ?>
+    <?php if (is_front_page() == false) { ?>
+        <?php get_template_part('parts/section-header'); ?>
+    <?php } ?>
 
     <main>

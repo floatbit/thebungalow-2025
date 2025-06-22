@@ -1,3 +1,10 @@
 .block-location-switchboard {
-    // Styles for this block will go here
+    .h1 {
+        @include pixelsToResponsiveUnit(font-size, 36px, 120px, 120px);
+    }
+    .grid-locations {
+        p {
+            @apply mb-0;
+        }
+    }    // Styles for this block will go here
 } 

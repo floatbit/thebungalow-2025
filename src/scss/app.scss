@@ -10,7 +10,14 @@
 body {
   @apply text-black bg-white;
 }
-.image-test {
-  @apply w-80 h-80 bg-cover;
-  background-image: url('./images/sample-image.jpg');
+
+a {
+  @apply underline;
+}
+
+.line {
+  @apply relative;
+  img {
+    @apply absolute right-0 top-[50%] translate-y-[-50%];
+  }
 }

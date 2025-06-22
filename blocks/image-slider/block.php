@@ -28,8 +28,25 @@ if ( ! empty( $block['align'] ) ) {
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/image-slider
-        </h2>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                        <img src="https://placehold.co/1780x787/222/fff" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://placehold.co/1780x787/444/fff" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://placehold.co/1780x787/555/fff" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://placehold.co/1780x787/999/fff" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dots-container">
+            <div class="dots"></div>
+        </div>
     </div>
 </div>

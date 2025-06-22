@@ -1,6 +1,15 @@
 import $ from 'jquery'
-import HelloWorld from '@/hello-world'
+import ImageSlider from '@/blocks/image-slider'
 
 (function ($) {
-  new HelloWorld()
+  
+  document.querySelectorAll('.block-image-slider').forEach(el => {
+    new ImageSlider(el)
+  })
+
+  // TO DO: Random line
+  document.querySelectorAll('.line').forEach(el => {
+    
+  })
+
 })($)

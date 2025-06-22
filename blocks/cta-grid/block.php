@@ -28,8 +28,41 @@ if ( ! empty( $block['align'] ) ) {
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/cta-grid
-        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+        <div class="">
+                <p class="mb-10">
+                    <img src="https://placehold.co/800x800/222/fff" alt="" class="max-w-[400px]">
+                </p>
+                <p class="h2 line">
+                    A lively <br>community
+                    <img src="<?php print assets_url('/dist/images/line1.svg') ?>" alt="">
+                </p>
+                <p>
+                    Never a dull moment here—this is your inside scoop on all the events happening at The Bungalow Santa Monica. From laid-back happy hours and live DJs to our Weekly Trivia Night and Annual Night Market, we’re all about setting the scene for you to relax, connect, and make unforgettable memories.
+                </p>
+                <p class="links flex gap-4">
+                    <a href="#">View Calendar</a>
+                    <a href="#">Become a Resident</a>
+                </p>
+
+            </div>
+            <div class="">
+                <p class="mb-10">
+                    <img src="https://placehold.co/800x800/222/fff" alt="" class="max-w-[400px]">
+                </p>
+                <p class="h2 line">
+                    Gather &<br>Celebrate
+                    <img src="<?php print assets_url('/dist/images/line2.svg') ?>" alt="">
+                </p>
+                <p>
+                    Never a dull moment here—this is your inside scoop on all the events happening at The Bungalow Santa Monica. From laid-back happy hours and live DJs to our Weekly Trivia Night and Annual Night Market, we’re all about setting the scene for you to relax, connect, and make unforgettable memories.
+                </p>
+                <p class="links flex gap-4">
+                    <a href="#">View Calendar</a>
+                    <a href="#">Become a Resident</a>
+                </p>
+
+            </div>
+        </div>
     </div>
 </div>

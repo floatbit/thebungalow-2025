@@ -60,7 +60,7 @@ function output_location_colors() {
             $secondary_color = get_field('secondary_color', 'location_' . $location_term->term_id);
             $secondary_dark_color = get_field('secondary_dark_color', 'location_' . $location_term->term_id);
         }
-        
+            
         // If no colors found on current post, check parent post
         if (!$primary_color || !$primary_dark_color || !$secondary_color || !$secondary_dark_color) {
             $parent_post_id = wp_get_post_parent_id($post_id);

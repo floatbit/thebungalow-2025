@@ -17,8 +17,8 @@ const containerStyles = ({ addComponents }) => {
       paddingRight: '40px'
     },
     '@screen 2xl': {
-      paddingLeft: '75px',
-      paddingRight: '75px'
+      paddingLeft: '80px',
+      paddingRight: '80px'
     }
   };
 
@@ -28,8 +28,8 @@ const containerStyles = ({ addComponents }) => {
       '@screen xl': {
         width: '100%',
         maxWidth: '1500px',
-        paddingLeft: '3.75rem',
-        paddingRight: '3.75rem',
+        paddingLeft: '80px',
+        paddingRight: '80px',
       }
     },
     '.container-fluid': {
@@ -66,7 +66,7 @@ module.exports = {
         'primary-dark': 'var(--color-primary-dark)',
         secondary: 'var(--color-secondary)',
         'secondary-dark': 'var(--color-secondary-dark)',
-        white: '#FDFBFF',
+        white: '#F6F6F1',
         black: '#2A2532'
       }
     },
