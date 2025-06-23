@@ -1,3 +1,7 @@
 .block-cta-grid {
-    // Styles for this block will go here
+  .line {
+    svg {
+        @apply absolute right-auto bottom-0 left-[30px];
+    }
+  }
 } 
