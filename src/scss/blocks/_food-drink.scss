@@ -1,3 +1,24 @@
 .block-food-drink {
-    // Styles for this block will go here
+    a {
+        @apply inline-block mb-2 mr-10 md:mr-0 md:ml-10;
+    }
+    a.active {
+        @apply underline inline-block;
+    }
+    a:not(.active) {
+        @apply no-underline;
+    }
+    .line {
+        svg {
+            @apply absolute bottom-[-15px] right-[-100px];
+            path {
+                fill: var(--color-secondary);
+            }
+        }
+    }
+    .menu {
+        h3 {
+            @apply mb-10;
+        }
+    }
 } 

@@ -35,7 +35,6 @@ if ( ! empty( $block['align'] ) ) {
                 </p>
                 <p class="h2 line">
                     A lively <br>community
-                    <img src="<?php print assets_url('/dist/images/line1.svg') ?>" alt="">
                 </p>
                 <p>
                     Never a dull moment here—this is your inside scoop on all the events happening at The Bungalow Santa Monica. From laid-back happy hours and live DJs to our Weekly Trivia Night and Annual Night Market, we’re all about setting the scene for you to relax, connect, and make unforgettable memories.
@@ -52,7 +51,6 @@ if ( ! empty( $block['align'] ) ) {
                 </p>
                 <p class="h2 line">
                     Gather &<br>Celebrate
-                    <img src="<?php print assets_url('/dist/images/line2.svg') ?>" alt="">
                 </p>
                 <p>
                     Never a dull moment here—this is your inside scoop on all the events happening at The Bungalow Santa Monica. From laid-back happy hours and live DJs to our Weekly Trivia Night and Annual Night Market, we’re all about setting the scene for you to relax, connect, and make unforgettable memories.
