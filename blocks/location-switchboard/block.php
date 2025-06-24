@@ -46,7 +46,7 @@ if ( ! empty( $block['align'] ) ) {
     <div class="container mb-10 relative mt-[-65px]">
         <div class="flex justify-center">
             <div class="max-w-[706px] text-center">
-                <p>Where the good times roll and the vibes are always just right. With a touch of nostalgia and a whole lot of charm, we invite  you to kick back, sip on a handcrafted cocktail, and enjoy the company of friends old and new. We’re  not just a bar – we are your spot to escape,, soak in the atmosphere, and make memories that stick around.</p>
+                <p>Where the good times roll and the vibes are always just right. With a touch of nostalgia and a whole lot of charm, we invite you to kick back, sip on a handcrafted cocktail, and enjoy the company of friends old and new. We’re not just a bar we are your spot to escape,, soak in the atmosphere, and make memories that stick around.</p>
             </div>
         </div>    
     </div>
