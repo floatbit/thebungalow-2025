@@ -28,8 +28,8 @@ if ( ! empty( $block['align'] ) ) {
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/image
-        </h2>
+        <p>
+            <img src="https://placehold.co/1280x776/222/fff" alt="" class="w-full">
+        </p>
     </div>
 </div>

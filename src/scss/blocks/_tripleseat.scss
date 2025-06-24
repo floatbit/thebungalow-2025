@@ -1,3 +1,10 @@
 .block-tripleseat {
-    // Styles for this block will go here
+    #tripleseat_embed_form {
+        h2 {
+            @extend %h3;
+        }
+        label {
+            @extend %p;
+        }
+    }
 } 

@@ -28,8 +28,16 @@ if ( ! empty( $block['align'] ) ) {
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/image-grid
-        </h2>
+        <?php $rows = get_field('image_sets');?>
+        <?php foreach($rows as $index=>$row):?>
+            <div class="md:flex gap-x-12 gap-y-4 <?php print $index < count($rows) - 1 ? 'mb-10' : '';?>">
+                <?php foreach($row['images'] as $image):?>
+                <div class="image" style="flex: <?php print $image['image']['width'] / $image['image']['height'];?>;">
+                    <img src="<?php print $image['image']['url'];?>" alt="">
+                    <p class="mt-2 text-center"><?php print $image['caption'];?></p>
+                </div>
+                <?php endforeach;?>
+            </div>
+        <?php endforeach;?>
     </div>
 </div>

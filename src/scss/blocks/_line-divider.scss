@@ -1,3 +1,8 @@
 .block-line-divider {
-    // Styles for this block will go here
+    .line {
+        @apply mb-10;
+        svg {
+            @apply static mx-auto;
+        }
+    }
 } 

@@ -39,6 +39,12 @@ const containerStyles = ({ addComponents }) => {
         paddingRight: '45px'
       }
     },
+    '.container-narrow': {
+      ...containerBase,
+      '@screen xl': {
+        maxWidth: '994px',
+      }
+    }
   });
 }
 
@@ -58,7 +64,8 @@ module.exports = {
       center: true,
     },
     fontFamily: {
-      sans: ['Inter', 'sans-serif'],
+      sans: ['AkkuratMonoLLWeb', 'sans-serif'],
+      display: ['FuturaPassataDISPLAY', 'sans-serif'],
     },
     extend: {
       colors: {

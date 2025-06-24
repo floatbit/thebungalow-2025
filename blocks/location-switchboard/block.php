@@ -57,7 +57,7 @@ if ( ! empty( $block['align'] ) ) {
             <div class="space-y-6">
                 <!-- Santa Monica -->
                 <a href="#" class="block relative group overflow-hidden aspect-[3/4]" aria-label="View Santa Monica location">
-                    <img src="https://placehold.co/600x800/222/fff?text=Santa+Monica" alt="A surfer on a wave" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
+                    <img src="https://placehold.co/600x800/999/fff" alt="A surfer on a wave" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
                         <div class="flex justify-between items-end">
@@ -72,7 +72,7 @@ if ( ! empty( $block['align'] ) ) {
 
                 <!-- San Diego -->
                 <a href="#" class="block relative group overflow-hidden aspect-[4/3]" aria-label="View San Diego location">
-                    <img src="https://placehold.co/800x600/222/fff?text=San+Diego" alt="A woman on a beach" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
+                    <img src="https://placehold.co/800x600/999/fff" alt="A woman on a beach" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
                         <div class="flex justify-between items-end">
@@ -90,7 +90,7 @@ if ( ! empty( $block['align'] ) ) {
             <div class="space-y-6">
                 <!-- Huntington Beach -->
                 <a href="#" class="block relative group overflow-hidden aspect-[4/3]" aria-label="View Huntington Beach location">
-                    <img src="https://placehold.co/800x600/222/fff?text=Huntington+Beach" alt="People with a vintage car and surfboards" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
+                    <img src="https://placehold.co/800x600/999/fff" alt="People with a vintage car and surfboards" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
                         <div class="flex justify-between items-end">
@@ -105,7 +105,7 @@ if ( ! empty( $block['align'] ) ) {
 
                 <!-- Long Beach -->
                 <a href="#" class="block relative group overflow-hidden aspect-[3/4]" aria-label="View Long Beach location">
-                    <img src="https://placehold.co/600x800/222/fff?text=Long+Beach" alt="A woman with a guitar on a couch" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
+                    <img src="https://placehold.co/600x800/999/fff" alt="A woman with a guitar on a couch" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
                         <div class="flex justify-between items-end">

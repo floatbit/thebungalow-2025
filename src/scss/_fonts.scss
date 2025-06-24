@@ -1,23 +1,43 @@
 @font-face {
-  font-family: 'Inter';
-  src: url('./fonts/inter/Inter-Regular.woff2') format('woff2'),
-      url('./fonts/inter/Inter-Regular.woff') format('woff');
-  font-weight: normal;
+  font-family: "AkkuratMonoLLWeb";
+  src: url("./fonts/AkkuratMonoLLWeb-Regular.woff") format("woff"),
+  url("./fonts/AkkuratMonoLLWeb-Regular.woff2") format("woff2");
   font-style: normal;
+  font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('./fonts/inter/Inter-Medium.woff2') format('woff2'),
-      url('./fonts/inter/Inter-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
+  font-family: "AkkuratMonoLLWeb";
+  src: url("./fonts/AkkuratMonoLLWeb-Italic.woff") format("woff"),
+  url("./fonts/AkkuratMonoLLWeb-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('./fonts/inter/Inter-Bold.woff2') format('woff2'),
-      url('./fonts/inter/Inter-Bold.woff') format('woff');
+  font-family: "AkkuratMonoLLWeb";
+  src: url("./fonts/AkkuratMonoLLWeb-Bold.woff") format("woff"),
+  url("./fonts/AkkuratMonoLLWeb-Bold.woff2") format("woff2");
+  font-style: normal;
   font-weight: 700;
-  font-style: normal;
 }
+
+@font-face {
+  font-family: "AkkuratMonoLLWeb";
+  src: url("./fonts/AkkuratMonoLLWeb-BoldItalic.woff") format("woff"),
+  url("./fonts/AkkuratMonoLLWeb-BoldItalic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'FuturaPassataDISPLAY';
+  src: url('./fonts/FuturaPassata-DISPLAY.eot');
+  src: url('./fonts/FuturaPassata-DISPLAY.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/FuturaPassata-DISPLAY.woff') format('woff'),
+       url('./fonts/FuturaPassata-DISPLAY.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
