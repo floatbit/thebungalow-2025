@@ -1,3 +1,5 @@
 .block-text-box {
-    // Styles for this block will go here
+    h3, %h3, .h3 {
+        @include pixelsToResponsiveUnit(font-size, 28px, 36px, 36px);
+    }
 } 

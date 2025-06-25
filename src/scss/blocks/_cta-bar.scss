@@ -1,3 +1,5 @@
 .block-cta-bar {
-    // Styles for this block will go here
+    .btn {
+        @apply bg-secondary-dark;
+    }
 } 

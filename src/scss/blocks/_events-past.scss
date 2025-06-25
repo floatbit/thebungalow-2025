@@ -1,3 +1,7 @@
 .block-events-past {
-    // Styles for this block will go here
+    .event {
+        p:last-child {
+            @apply mb-0;
+        }
+    }
 } 
