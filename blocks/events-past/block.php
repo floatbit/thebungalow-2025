@@ -24,6 +24,8 @@ if ( ! empty( $block['className'] ) ) {
 if ( ! empty( $block['align'] ) ) {
     $classes .= ' align' . $block['align'];
 }
+
+$classes .= ' ' . get_field('bottom_margin');
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
@@ -39,7 +41,7 @@ if ( ! empty( $block['align'] ) ) {
                     <p class="mb-6">May 20, 2025 - August 31, 2025</p>
                     <p class="h2">Night Market at the Bungalow</p>
                     <p class="max-w-[634px]">
-                        Get ready to experience the ultimate foodie event of the summer with new food vendors, beverage activations, family-friendly activities, live musical and DJ performances, and celebrity guest appearances. Free and open to the public for guests of all ages and pet friendly, The Bungalow’s Night Market kicks off Thursday, June 6, and will run every Thursday from 5-11 p.m. through August 29.
+                        Get ready to experience the ultimate foodie event of the summer with new food vendors, beverage activations, family-friendly activities, live musical and DJ performances, and celebrity guest appearances. Free and open to the public for guests of all ages and pet friendly, The Bungalow's Night Market kicks off Thursday, June 6, and will run every Thursday from 5-11 p.m. through August 29.
                     </p>
                     <p>
                         <a href="#" class="btn">Learn More</a>

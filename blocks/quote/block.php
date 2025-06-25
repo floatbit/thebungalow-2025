@@ -24,13 +24,15 @@ if ( ! empty( $block['className'] ) ) {
 if ( ! empty( $block['align'] ) ) {
     $classes .= ' align' . $block['align'];
 }
+
+$classes .= ' ' . get_field('bottom_margin');
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="bg-secondary text-secondary-dark pt-12 pb-4">
         <div class="container max-w-[1328px]">
             <p class="h3 quote mb-5">
-                <span>“</span>By far the best spot in Santa Monica for the atmosphere.  This place has the best vibe. Great people, friendly bartenders, amazing music, and smiles everywhere. Plus, the drinks are top-notch—what more do you need for a great time? Thanks, The Bungalow!<span>”</span>
+                <span>“</span>By far the best spot in Santa Monica for the atmosphere.  This place has the best vibe. Great people, friendly bartenders, amazing music, and smiles everywhere. Plus, the drinks are top-notch—what more do you need for a great time? Thanks, The Bungalow!<span>”</span>
             </p>
             <p class="author">
                 — Vraj Patel, Google Review

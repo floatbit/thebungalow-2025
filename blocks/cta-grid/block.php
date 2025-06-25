@@ -24,6 +24,8 @@ if ( ! empty( $block['className'] ) ) {
 if ( ! empty( $block['align'] ) ) {
     $classes .= ' align' . $block['align'];
 }
+
+$classes .= ' ' . get_field('bottom_margin');
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
@@ -37,7 +39,7 @@ if ( ! empty( $block['align'] ) ) {
                     A lively <br>community
                 </p>
                 <p>
-                    Never a dull moment here—this is your inside scoop on all the events happening at The Bungalow Santa Monica. From laid-back happy hours and live DJs to our Weekly Trivia Night and Annual Night Market, we’re all about setting the scene for you to relax, connect, and make unforgettable memories.
+                    Never a dull moment here—this is your inside scoop on all the events happening at The Bungalow Santa Monica. From laid-back happy hours and live DJs to our Weekly Trivia Night and Annual Night Market, we're all about setting the scene for you to relax, connect, and make unforgettable memories.
                 </p>
                 <p class="links flex gap-4">
                     <a href="#">View Calendar</a>
@@ -53,7 +55,7 @@ if ( ! empty( $block['align'] ) ) {
                     Gather &<br>Celebrate
                 </p>
                 <p>
-                    Never a dull moment here—this is your inside scoop on all the events happening at The Bungalow Santa Monica. From laid-back happy hours and live DJs to our Weekly Trivia Night and Annual Night Market, we’re all about setting the scene for you to relax, connect, and make unforgettable memories.
+                    Never a dull moment here—this is your inside scoop on all the events happening at The Bungalow Santa Monica. From laid-back happy hours and live DJs to our Weekly Trivia Night and Annual Night Market, we're all about setting the scene for you to relax, connect, and make unforgettable memories.
                 </p>
                 <p class="links flex gap-4">
                     <a href="#">View Calendar</a>

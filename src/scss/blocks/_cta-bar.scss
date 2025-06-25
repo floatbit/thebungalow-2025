@@ -1,5 +1,8 @@
 .block-cta-bar {
     .btn {
-        @apply bg-secondary-dark;
+        @apply bg-secondary-dark text-white;
+    }
+    .btn:hover {
+        @apply bg-primary text-secondary-dark;
     }
 } 

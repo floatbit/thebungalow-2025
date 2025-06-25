@@ -16,3 +16,36 @@
 @import 'events-past';
 @import 'location-information';
 @import 'text-box';
+@import 'links';
+
+.block-bottom-margin-none {
+  @apply mb-0;
+}
+
+.block-bottom-margin-small {
+  @apply mb-8;
+  @screen md {
+    @apply mb-10;
+  }
+}
+
+.block-bottom-margin-medium {
+  @apply mb-[60px];
+  @screen md {
+    @apply mb-[80px];
+  }
+}
+
+.block-bottom-margin-large {
+  @apply mb-[60px];
+  @screen md {
+    @apply mb-[120px];
+  }
+}
+
+.block-bottom-margin-extra-large {
+  @apply mb-14;
+  @screen md {
+    @apply mb-[180px];
+  }
+}

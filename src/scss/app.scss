@@ -15,6 +15,10 @@ a {
   @apply underline;
 }
 
+a:hover {
+  @apply no-underline;
+}
+
 .line {
   @apply relative;
   svg {
@@ -23,5 +27,8 @@ a {
 }
 
 .btn {
-  @apply bg-secondary inline-block px-4 py-2 uppercase h5 text-white no-underline hover:bg-primary m-0;
+  @apply bg-secondary inline-block px-4 py-2 uppercase h5 text-secondary-dark no-underline hover:bg-primary m-0;
+}
+.btn:hover {
+  @apply bg-secondary-dark text-white;
 }

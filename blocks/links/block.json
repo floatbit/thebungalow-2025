@@ -1,0 +1,17 @@
+{
+  "name": "acf/links",
+  "title": "Links",
+  "description": "A custom block for displaying a set of links.",
+  "category": "formatting",
+  "icon": "admin-links",
+  "keywords": ["links", "acf", "custom"],
+  "supports": {
+    "align": true,
+    "anchor": true,
+    "customClassName": true
+  },
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+} 

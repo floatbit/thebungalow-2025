@@ -1,7 +1,7 @@
     </main>
 
 
-    <div class="lines-bank">
+    <div class="lines-bank hidden">
         <?php $lines = [
             'line1' => get_template_directory() . '/dist/images/line1.svg',
             'line2' => get_template_directory() . '/dist/images/line2.svg',
