@@ -11,6 +11,11 @@ body {
   @apply text-black bg-white;
 }
 
+main {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 a {
   @apply underline;
 }
@@ -31,4 +36,22 @@ a:hover {
 }
 .btn:hover {
   @apply bg-secondary-dark text-white;
+}
+
+.cta-bar {
+  .btn {
+    @apply bg-secondary-dark text-white;
+  }
+  .btn:hover {
+      @apply bg-primary text-secondary-dark;
+  }
+}
+
+header {
+  .logo {
+    padding-top: 20px;
+    img {
+      @include pixelsToResponsiveUnit(width, 168px, 248px, 248px);
+    }
+  }
 }
