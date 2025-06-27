@@ -1,12 +1,15 @@
 .block-food-drink {
     a {
-        @apply inline-block mb-2 mr-10 md:mr-0 md:ml-10;
+        @apply inline-block mb-4 mr-3 md:mr-0 md:ml-3 no-underline;
     }
     a.active {
         @apply underline inline-block;
     }
     a:not(.active) {
         @apply no-underline;
+    }
+    a:hover {
+        @apply underline;
     }
     .line {
         svg {

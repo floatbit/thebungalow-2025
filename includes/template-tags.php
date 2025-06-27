@@ -59,3 +59,7 @@ function get_location_logo() {
     
     return $logo;
 }
+
+function is_location() {
+    return get_location_logo() != null;
+}

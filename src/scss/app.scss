@@ -50,9 +50,48 @@ a:hover {
 header {
   @apply duration-[450ms] ease-in-out;
   .logo {
-    padding-top: 20px;
     img {
+      @apply duration-[450ms] transition-all;
       @include pixelsToResponsiveUnit(width, 168px, 248px, 248px);
+    }
+  }
+  .links {
+    @apply duration-[450ms] transition-all;
+    a {
+      @extend %h4;
+      @include pixelsToResponsiveUnit(font-size, 20px, 24px, 24px);
+      @apply no-underline m-0;
+    }
+    a:hover {
+      @apply underline decoration-[3px];
+    }
+    a.home {
+      @apply duration-[450ms] transition-all w-0 opacity-0 invisible;
+    }
+  }
+  .locations-link {
+    @apply duration-[450ms] transition-all translate-y-0;
+  }
+}
+
+.header-minimized {
+  header {
+    .logo {
+      img {
+        @screen md {
+          width: 0;
+        }
+      }
+    }
+    .links {
+      @apply ml-0;
+      max-width: 100%;
+      a.home {
+        @apply w-auto opacity-100 visible;
+      }
+    }
+    .locations-link {
+      @apply opacity-0 invisible -translate-y-full;
     }
   }
 }
@@ -84,5 +123,11 @@ header {
   header {
     @apply duration-200;
     @apply bg-primary ;
+  }
+}
+
+.is-location {
+  footer {
+    @apply bg-primary;
   }
 }

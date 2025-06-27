@@ -1,5 +1,6 @@
     </main>
 
+    <?php get_template_part('parts/section-footer'); ?>
 
     <div class="lines-bank hidden">
         <?php $lines = [

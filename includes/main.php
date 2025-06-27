@@ -124,3 +124,26 @@ function fix_svg_display() {
     </style>';
 }
 add_action('admin_head', 'fix_svg_display');
+
+function thebungalow_body_class($classes) {
+    global $post;
+    $post_slug = $post->post_name;
+    if (is_front_page() == FALSE) {
+      $classes[] = 'not-home';
+    }
+    $classes[] = sprintf('post-type-%s', $post->post_type);
+    $classes[] = sprintf('page-%s', $post_slug);
+
+    if (is_user_logged_in()) {
+      $classes[] = 'logged-in';
+    }
+    $current_user = wp_get_current_user();
+    if ($current_user && in_array('administrator', $current_user->roles)) {
+      $classes[] = 'is-admin';
+    }
+    if (is_location()) {
+        $classes[] = 'is-location';
+    }
+    return $classes;
+}
+add_filter('body_class', 'thebungalow_body_class');

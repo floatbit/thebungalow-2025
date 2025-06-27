@@ -10,14 +10,28 @@
         width: 100%;
         height: 100%;
         z-index: 1;
+        position: relative;
       }
       .swiper-slide {
         flex-shrink: 0;
         width: 100%;
     }
   
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-      }
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+    }
+
+    .dots {
+      @apply flex gap-2;
+    }
+
+    .swiper-pagination-bullet {
+      @apply bg-white rounded-full w-[12px] h-[12px] inline-block;
+    }
+
+    .swiper-pagination-bullet-active,
+    .swiper-pagination-bullet:hover {
+      @apply bg-secondary cursor-pointer;
+    }
 } 

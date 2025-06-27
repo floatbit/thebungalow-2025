@@ -30,9 +30,10 @@ $classes .= ' ' . get_field('bottom_margin');
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
+        <div class="relative swiper-container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
                         <img src="https://placehold.co/1780x787/222/fff" alt="">
                     </div>
                     <div class="swiper-slide">
@@ -46,9 +47,9 @@ $classes .= ' ' . get_field('bottom_margin');
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="dots-container">
-            <div class="dots"></div>
+            <div class="dots-container absolute left-6 bottom-6 z-20">
+                <div class="dots"></div>
+            </div>
         </div>
     </div>
 </div>
