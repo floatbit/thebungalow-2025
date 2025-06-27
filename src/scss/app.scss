@@ -48,10 +48,41 @@ a:hover {
 }
 
 header {
+  @apply duration-[450ms] ease-in-out;
   .logo {
     padding-top: 20px;
     img {
       @include pixelsToResponsiveUnit(width, 168px, 248px, 248px);
     }
+  }
+}
+
+#mobile-menu {
+  p,
+  li {
+      @apply mb-4;
+  }
+  p.h4 {
+      @apply mt-10 mb-5;
+  }
+  p.h4:first-of-type {
+      @apply mt-0;
+  }
+  .other-locations {
+    @apply mt-14;
+    p.h4 {
+      @apply m-0;
+    }
+    a {
+      @apply no-underline block my-5;
+    }
+  }
+
+}
+
+.mobile-menu-open {
+  header {
+    @apply duration-200;
+    @apply bg-primary ;
   }
 }

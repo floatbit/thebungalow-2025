@@ -13,6 +13,7 @@
 
     <?php if (is_front_page() == false) { ?>
         <?php get_template_part('parts/section-header'); ?>
+        <?php get_template_part('parts/mobile-menu'); ?>
     <?php } ?>
 
     <main>

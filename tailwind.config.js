@@ -8,10 +8,6 @@ const containerStyles = ({ addComponents }) => {
     marginRight: 'auto',
     paddingLeft: '20px',
     paddingRight: '20px',
-    '@screen md': {
-      paddingLeft: '30px',
-      paddingRight: '30px'
-    },
     '@screen lg': {
       paddingLeft: '40px',
       paddingRight: '40px'
