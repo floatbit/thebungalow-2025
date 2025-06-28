@@ -61,5 +61,5 @@ function get_location_logo() {
 }
 
 function is_location() {
-    return get_location_logo() != null;
+    return get_location_logo();
 }

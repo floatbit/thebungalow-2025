@@ -14,6 +14,7 @@ body {
 main {
   width: 100vw;
   overflow-x: hidden;
+  min-height: 65vh;
 }
 
 a {
@@ -78,13 +79,15 @@ header {
   header {
     .logo {
       img {
+        width: 130px;
         @screen md {
+          opacity: 0;
           width: 0;
         }
       }
     }
     .links {
-      @apply ml-0;
+      @apply ml-0 mb-0;
       max-width: 100%;
       a.home {
         @apply w-auto opacity-100 visible;

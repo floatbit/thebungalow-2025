@@ -6,7 +6,7 @@
         In the Bay Area? Check out <a href="https://bungalowkitchen.com/" target="_blank">The Bungalow Kitchen!</a>
     </p>
     <p>
-        <a href="#" class="mr-4">Terms</a>
-        <a href="#">Privacy</a>
+        <a href="/terms" class="mr-4">Terms</a>
+        <a href="/privacy">Privacy</a>
     </p>
 </div>

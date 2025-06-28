@@ -30,14 +30,6 @@ $classes .= ' ' . get_field('bottom_margin');
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
 
-    <div class="container pt-20">
-        <div class="flex justify-center">
-            <div class="max-w-[706px] text-center">
-                <img src="<?php print assets_url('/dist/images/logo.svg'); ?>" alt="">
-            </div>
-        </div>    
-    </div>
-
     <div class="container mb-10">
         <div class="relative max-w-[764px] mx-auto">
             <img src="<?php print assets_url('/dist/images/LongBeachHero_LargeSalmon 1.svg'); ?>" alt="">
@@ -58,7 +50,7 @@ $classes .= ' ' . get_field('bottom_margin');
             <!-- Left Column -->
             <div class="space-y-6">
                 <!-- Santa Monica -->
-                <a href="#" class="block relative group overflow-hidden aspect-[3/4]" aria-label="View Santa Monica location">
+                <a href="/santa-monica" class="block relative group overflow-hidden aspect-[3/4]" aria-label="View Santa Monica location">
                     <img src="https://placehold.co/600x800/999/fff" alt="A surfer on a wave" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
                     <div class="absolute bottom-0 h-[147px] w-full bg-gradient-to-t from-black/100 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
@@ -73,7 +65,7 @@ $classes .= ' ' . get_field('bottom_margin');
                 </a>
 
                 <!-- San Diego -->
-                <a href="#" class="block relative group overflow-hidden aspect-[4/3]" aria-label="View San Diego location">
+                <a href="/san-diego" class="block relative group overflow-hidden aspect-[4/3]" aria-label="View San Diego location">
                     <img src="https://placehold.co/800x600/999/fff" alt="A woman on a beach" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
                     <div class="absolute bottom-0 h-[147px] w-full bg-gradient-to-t from-black/100 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
@@ -91,7 +83,7 @@ $classes .= ' ' . get_field('bottom_margin');
             <!-- Right Column -->
             <div class="space-y-6">
                 <!-- Huntington Beach -->
-                <a href="#" class="block relative group overflow-hidden aspect-[4/3]" aria-label="View Huntington Beach location">
+                <a href="/huntington-beach" class="block relative group overflow-hidden aspect-[4/3]" aria-label="View Huntington Beach location">
                     <img src="https://placehold.co/800x600/999/fff" alt="People with a vintage car and surfboards" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
                     <div class="absolute bottom-0 h-[147px] w-full bg-gradient-to-t from-black/100 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
@@ -106,7 +98,7 @@ $classes .= ' ' . get_field('bottom_margin');
                 </a>
 
                 <!-- Long Beach -->
-                <a href="#" class="block relative group overflow-hidden aspect-[3/4]" aria-label="View Long Beach location">
+                <a href="/long-beach" class="block relative group overflow-hidden aspect-[3/4]" aria-label="View Long Beach location">
                     <img src="https://placehold.co/600x800/999/fff" alt="A woman with a guitar on a couch" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
                     <div class="absolute bottom-0 h-[147px] w-full bg-gradient-to-t from-black/100 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
