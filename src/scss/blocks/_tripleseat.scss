@@ -1,10 +1,51 @@
 .block-tripleseat {
+    .container {
+        max-width: 994px;
+    }
     #tripleseat_embed_form {
         h2 {
             @extend %h3;
+            @apply mt-10 mb-0;
         }
         label {
             @extend %p;
+            @apply mb-3;
+        }
+        td {
+            padding: 0;
+            @apply pb-8 w-full;
+        }
+        input[type=text],
+        #lead_phone_number {
+            @apply w-full;
+        }
+        #lead_phone_number_extension {
+            @apply w-40;
+            @screen md {
+                @apply w-60;
+            }
+        }
+        tr {
+            @apply flex flex-col;
+            @screen md {
+                @apply flex-row gap-4;
+            }
+        }
+        input#lead_submit {
+            @extend %btn;
+            @apply bg-secondary border-0 py-2 px-4;
+        }
+        #lead_form_submit a {
+            @apply block text-right mt-8;
+            float: none;
+        }
+        .row_gdpr_consent {
+            td {
+                @apply flex gap-4 pb-2;
+            }
+            label {
+                @apply relative top-[-2px];
+            }
         }
     }
 } 

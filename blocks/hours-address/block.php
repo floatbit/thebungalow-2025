@@ -26,27 +26,43 @@ if ( ! empty( $block['align'] ) ) {
 }
 
 $classes .= ' ' . get_field('bottom_margin');
+
+$location_fields = get_location_fields();
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="bg-secondary py-32">
         <div class="container">
             <div class="flex items-center justify-between">
-                <div class="w-1/2 text-secondary-dark text-center">
-                    <?php for($i=0;$i<3;$i++): ?>
-                        <p class="h3 mb-0">Wednesday–Friday</p>
-                        <p class="h2">2pm–2am</p>
-                    <?php endfor; ?>
+                <div class="basis-5/12 text-secondary-dark text-center">
+                    <div class="line mb-5"></div>
+                    <?php $left = get_field('left_text');?>
+                    <p><?php echo $left['top']; ?></p>
+                    <?php foreach($location_fields['days_hours'] as $field): ?>
+                        <div class="my-12">
+                            <p class="h3 mb-0"><?php echo $field['day']; ?></p>
+                            <p class="h2"><?php echo $field['hours']; ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                    <p class="mb-8"><?php echo $left['bottom']; ?></p>
+                    <div class="line"></div>
                 </div>
-                <div class="w-1/2">
-                    <div class="bg-white text-primary-dark p-10 text-center rotate-3">
-                        <p>Always Close By</p>
-                        <p class="h3">6400 E Pacific Coast Hwy #200 <br>Long Beach, CA 90803</p>
-                        <p>
-                            <img src="https://placehold.co/600x400/EEE/31343C" alt="" class="w-full">
+                <div class="basis-6/12">
+                    <div class="bg-white text-primary-dark p-10 text-center rotate-3 hover:rotate-0 transition-all duration-300">
+                        <?php $right = get_field('right_text');?>
+                        <p><?php echo $right['top']; ?></p>
+                        <p class="h3">
+                            <?php echo $location_fields['address']; ?>
                         </p>
-                        <p class="h2">GET DIRECTIONS</p>
-                        <p>(Last leaf of gold vanishes from the sea-curve.)</p>
+                        <p>
+                            <img src="<?php echo $right['image']['url']; ?>" alt="<?php echo $right['image']['alt']; ?>" class="w-full">
+                        </p>
+                        <p class="h2">
+                            <a href="<?php echo $location_fields['directions_url']; ?>" target="_blank">
+                                GET DIRECTIONS
+                            </a>
+                        </p>
+                        <p><?php echo $right['bottom']; ?></p>
                     </div>
                 </div>
             </div>

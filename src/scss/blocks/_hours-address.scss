@@ -1,3 +1,15 @@
 .block-hours-address {
-    // Styles for this block will go here
+    .line {
+        svg {
+            @apply static mx-auto;
+        }
+    }
+    .h2{
+        a {
+            @apply no-underline;
+        }
+        a:hover {
+            @apply underline;
+        }
+    }
 } 

@@ -23,7 +23,7 @@ const containerStyles = ({ addComponents }) => {
       ...containerBase,
       '@screen xl': {
         width: '100%',
-        maxWidth: '1500px',
+        maxWidth: '1440px',
         paddingLeft: '80px',
         paddingRight: '80px',
       }

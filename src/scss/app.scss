@@ -32,10 +32,12 @@ a:hover {
   }
 }
 
-.btn {
+.btn,
+%btn {
   @apply bg-secondary inline-block px-4 py-2 uppercase h5 text-secondary-dark no-underline hover:bg-primary m-0;
 }
-.btn:hover {
+.btn:hover,
+%btn:hover {
   @apply bg-secondary-dark text-white;
 }
 

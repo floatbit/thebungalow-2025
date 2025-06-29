@@ -34,16 +34,16 @@ $classes .= ' ' . get_field('bottom_margin');
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="https://placehold.co/1780x787/222/fff" alt="">
+                        <img src="https://placehold.co/1280x720/222/fff" alt="">
                     </div>
                     <div class="swiper-slide">
-                        <img src="https://placehold.co/1780x787/444/fff" alt="">
+                        <img src="https://placehold.co/1280x720/444/fff" alt="">
                     </div>
                     <div class="swiper-slide">
-                        <img src="https://placehold.co/1780x787/555/fff" alt="">
+                        <img src="https://placehold.co/1280x720/555/fff" alt="">
                     </div>
                     <div class="swiper-slide">
-                        <img src="https://placehold.co/1780x787/999/fff" alt="">
+                        <img src="https://placehold.co/1280x720/999/fff" alt="">
                     </div>
                 </div>
             </div>

@@ -1,4 +1,7 @@
 .block-quote {
+    .container {
+        max-width: 1328px;
+    }
     p.quote {
         @apply relative;
         line-height: 1.25;

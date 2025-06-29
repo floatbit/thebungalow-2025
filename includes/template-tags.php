@@ -63,3 +63,20 @@ function get_location_logo() {
 function is_location() {
     return get_location_logo();
 }
+
+function get_location_fields() {
+    $fields = [];
+
+    $post_id = get_the_ID();
+    
+    if ($post_id) {
+        $location_terms = get_the_terms($post_id, 'location');
+        
+        if ($location_terms && !is_wp_error($location_terms)) {
+            $location_term = $location_terms[0];
+            $fields = get_fields('location_' . $location_term->term_id);
+        }
+    }
+
+    return $fields;
+}

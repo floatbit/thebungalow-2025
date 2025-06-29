@@ -26,6 +26,8 @@ if ( ! empty( $block['align'] ) ) {
 }
 
 $classes .= ' ' . get_field('bottom_margin');
+
+$location_fields = get_location_fields();
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
@@ -48,31 +50,29 @@ $classes .= ' ' . get_field('bottom_margin');
                     </ul>
                     <p class="h4">Follow</p>
                     <ul>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
+                        <?php foreach($location_fields['social_links'] as $field): ?>
+                            <li><a href="<?php echo $field['link']['url']; ?>" target="_blank"><?php echo $field['link']['title']; ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
                 <!-- Column 3: Links (about 1/4 width) -->
                 <div class="w-full md:basis-4/12">
                     <p class="h4">Visit</p>
                     <p>
-                        101 Wilshire BLVD,<br>
-                        Santa Monica, CA 90401
+                        <?php echo $location_fields['address']; ?>
                     </p>
                     <p>
-                        <a href="#">Get Directions</a>
+                        <a href="<?php echo $location_fields['directions_url']; ?>" target="_blank">Get Directions</a>
                     </p>
                     <p class="h4">Hours</p>
                     <p>
-                        Wednesday–Thursday: 5PM–12AM<br>
-                        Friday: 5PM–2AM<br>
-                        Sunday: 2PM–10PM<br>
-                        Sunset Sips: 5-7pm Weekdays,<br>
-                        2-4pm Weekends
+                        <?php foreach($location_fields['days_hours'] as $field): ?>
+                            <?php echo $field['day']; ?>: <?php echo $field['hours']; ?><br>
+                        <?php endforeach; ?>
                     </p>
                     <p class="h4">Call Us</p>
                     <p>
-                        <a href="tel:+17143740399">+1 (714) 374-0399</a>
+                        <a href="tel:<?php echo $location_fields['phone_number']; ?>"><?php echo $location_fields['phone_number']; ?></a>
                     </p>
                 </div>
             </div>
