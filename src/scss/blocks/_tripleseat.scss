@@ -32,7 +32,7 @@
             }
         }
         input#lead_submit {
-            @extend %btn;
+            @include btn();
             @apply bg-secondary border-0 py-2 px-4;
         }
         #lead_form_submit a {

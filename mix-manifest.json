@@ -1,4 +1,8 @@
 {
+    "/dist/app.js": "/dist/app.js?id=d21c65e95c0c778fcf633a2a744e636f",
+    "/dist/blocks/text.js": "/dist/blocks/text.js?id=d41d8cd98f00b204e9800998ecf8427e",
+    "/dist/editor.css": "/dist/editor.css?id=4021273695ea0f496f2e8dc4d2efad3e",
+    "/dist/app.css": "/dist/app.css?id=25dc8a1982f5d294de1274d5e1558ba5",
     "/dist/images/LongBeachHero_LargeSalmon 1.svg": "/dist/images/LongBeachHero_LargeSalmon 1.svg?id=1328a18ee0f6ec2631cfda93fc6fdbd7",
     "/dist/images/line1.svg": "/dist/images/line1.svg?id=e38c2ee592e60bb06b63fac3c971e14c",
     "/dist/images/line2.svg": "/dist/images/line2.svg?id=6c03833350d7a78829def77cb6fa5b7c",
