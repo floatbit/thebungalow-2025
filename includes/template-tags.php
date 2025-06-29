@@ -76,6 +76,17 @@ function get_location_fields() {
             $location_term = $location_terms[0];
             $fields = get_fields('location_' . $location_term->term_id);
         }
+
+        if (!$fields) {
+            $parent_post_id = wp_get_post_parent_id($post_id);
+            if ($parent_post_id) {
+                $parent_location_terms = get_the_terms($parent_post_id, 'location');
+                if ($parent_location_terms && !is_wp_error($parent_location_terms)) {
+                    $parent_location_term = $parent_location_terms[0];
+                    $fields = get_fields('location_' . $parent_location_term->term_id);
+                }
+            }
+        }   
     }
 
     return $fields;
