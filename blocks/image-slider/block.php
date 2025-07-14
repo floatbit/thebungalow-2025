@@ -26,6 +26,9 @@ if ( ! empty( $block['align'] ) ) {
 }
 
 $classes .= ' ' . get_field('bottom_margin');
+
+// Get the images from ACF
+$images = get_field('images');
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
@@ -33,18 +36,21 @@ $classes .= ' ' . get_field('bottom_margin');
         <div class="relative swiper-container">
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="https://placehold.co/1280x720/222/fff" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://placehold.co/1280x720/444/fff" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://placehold.co/1280x720/555/fff" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://placehold.co/1280x720/999/fff" alt="">
-                    </div>
+                    <?php if ($images): ?>
+                        <?php $first_slide = true; ?>
+                        <?php foreach ($images as $image_row): ?>
+                            <?php $image = $image_row['image']; ?>
+                            <?php if ($image): ?>
+                                <div class="swiper-slide">
+                                    <?php if ($first_slide): ?>
+                                        <div class="mask"></div>
+                                    <?php endif; ?>
+                                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="aspect-[1280/720]">
+                                </div>
+                                <?php $first_slide = false; ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="dots-container absolute left-6 bottom-6 z-20">

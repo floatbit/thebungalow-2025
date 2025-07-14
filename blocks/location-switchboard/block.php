@@ -33,14 +33,14 @@ $classes .= ' ' . get_field('bottom_margin');
     <div class="container mb-10">
         <div class="relative max-w-[764px] mx-auto">
             <img src="<?php print assets_url('/dist/images/LongBeachHero_LargeSalmon 1.svg'); ?>" alt="">
-            <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full h1">Good Times<br>Live Here</p>
+            <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full h1"><?php the_field('title'); ?></p>
         </div>
     </div>
 
     <div class="container mb-10 relative mt-[-65px]">
         <div class="flex justify-center">
             <div class="max-w-[706px] text-center">
-                <p>Where the good times roll and the vibes are always just right. With a touch of nostalgia and a whole lot of charm, we invite you to kick back, sip on a handcrafted cocktail, and enjoy the company of friends old and new. We're not just a bar we are your spot to escape,, soak in the atmosphere, and make memories that stick around.</p>
+                <?php the_field('intro_text'); ?>
             </div>
         </div>    
     </div>
@@ -49,68 +49,84 @@ $classes .= ' ' . get_field('bottom_margin');
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 grid-locations">
             <!-- Left Column -->
             <div class="space-y-6">
-                <!-- Santa Monica -->
-                <a href="/santa-monica" class="block relative group overflow-hidden aspect-[3/4]" aria-label="View Santa Monica location">
-                    <img src="https://placehold.co/600x800/999/fff" alt="A surfer on a wave" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
+                <?php $row_counter = 0; ?>
+                <?php while ( have_rows('left_boxes') ) : the_row(); ?>
+                <?php $link = get_sub_field('link'); ?>
+                <?php $image = get_sub_field('image'); ?>
+                <?php $location_tid = get_sub_field('location'); ?>
+                <?php $location_term = get_term($location_tid, 'location'); ?>
+                <?php $location_fields = get_location_fields($location_tid); ?>
+                
+                <?php if ($row_counter % 2 === 0): ?>
+                <a href="<?php echo $link; ?>" class="block relative group overflow-hidden aspect-[3/4]" aria-label="View <?php echo $location_term->name; ?> location">
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 multiply">
                     <div class="absolute bottom-0 h-[147px] w-full bg-gradient-to-t from-black/100 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
                         <div class="flex justify-between items-end">
                             <div class="text-white font-mono text-sm">
-                                <p>101 Wilshire Blvd.</p>
-                                <p>Santa Monica, CA</p>
+                                <p><?php echo $location_fields['address']; ?></p>
                             </div>
-                            <span class="inline-block bg-[#9DE2C7] text-black px-4 py-2 mb-0 h5">Santa Monica</span>
+                            <span class="inline-block text-black px-4 py-2 mb-0 h5" style="background-color: <?php echo $location_fields['primary_color']; ?>;"><?php echo $location_term->name; ?></span>
                         </div>
                     </div>
                 </a>
-
-                <!-- San Diego -->
-                <a href="/san-diego" class="block relative group overflow-hidden aspect-[4/3]" aria-label="View San Diego location">
-                    <img src="https://placehold.co/800x600/999/fff" alt="A woman on a beach" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
+                <?php else: ?>
+                <a href="<?php echo $link; ?>" class="block relative group overflow-hidden aspect-[4/3]" aria-label="View <?php echo $location_term->name; ?> location">
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 multiply">
                     <div class="absolute bottom-0 h-[147px] w-full bg-gradient-to-t from-black/100 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
                         <div class="flex justify-between items-end">
                             <div class="text-white font-mono text-sm">
-                                <p>TK. TK TK TK</p>
-                                <p>San Diego, CA</p>
+                                <p><?php echo $location_fields['address']; ?></p>
                             </div>
-                            <span class="inline-block bg-[#F8B96E] text-black px-4 py-2 mb-0 h5">San Diego</span>
+                            <span class="inline-block text-black px-4 py-2 mb-0 h5" style="background-color: <?php echo $location_fields['primary_color']; ?>;"><?php echo $location_term->name; ?></span>
                         </div>
                     </div>
                 </a>
+                <?php endif; ?>
+                <?php $row_counter++; ?>
+                <?php endwhile; ?>
             </div>
 
             <!-- Right Column -->
             <div class="space-y-6">
-                <!-- Huntington Beach -->
-                <a href="/huntington-beach" class="block relative group overflow-hidden aspect-[4/3]" aria-label="View Huntington Beach location">
-                    <img src="https://placehold.co/800x600/999/fff" alt="People with a vintage car and surfboards" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
+                <?php $row_counter = 0; ?>
+                <?php while ( have_rows('right_boxes') ) : the_row(); ?>
+                <?php $link = get_sub_field('link'); ?>
+                <?php $image = get_sub_field('image'); ?>
+                <?php $location_tid = get_sub_field('location'); ?>
+                <?php $location_term = get_term($location_tid, 'location'); ?>
+                <?php $location_fields = get_location_fields($location_tid); ?>
+                
+                <?php if ($row_counter % 2 !== 0): ?>
+                <a href="<?php echo $link; ?>" class="block relative group overflow-hidden aspect-[3/4]" aria-label="View <?php echo $location_term->name; ?> location">
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 multiply">
                     <div class="absolute bottom-0 h-[147px] w-full bg-gradient-to-t from-black/100 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
                         <div class="flex justify-between items-end">
                             <div class="text-white font-mono text-sm">
-                                <p>21058 Pacific Coast Hwy #240</p>
-                                <p>Huntington Beach, CA</p>
+                                <p><?php echo $location_fields['address']; ?></p>
                             </div>
-                            <span class="inline-block bg-[#E89286] text-black px-4 py-2 mb-0 h5">Huntington Beach</span>
+                            <span class="inline-block text-black px-4 py-2 mb-0 h5" style="background-color: <?php echo $location_fields['primary_color']; ?>;"><?php echo $location_term->name; ?></span>
                         </div>
                     </div>
                 </a>
-
-                <!-- Long Beach -->
-                <a href="/long-beach" class="block relative group overflow-hidden aspect-[3/4]" aria-label="View Long Beach location">
-                    <img src="https://placehold.co/600x800/999/fff" alt="A woman with a guitar on a couch" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
+                <?php else: ?>
+                <a href="<?php echo $link; ?>" class="block relative group overflow-hidden aspect-[4/3]" aria-label="View <?php echo $location_term->name; ?> location">
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 multiply">
                     <div class="absolute bottom-0 h-[147px] w-full bg-gradient-to-t from-black/100 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-6 w-full">
                         <div class="flex justify-between items-end">
                             <div class="text-white font-mono text-sm">
-                                <p>6400 E Pacific Coast Hwy #200</p>
-                                <p>Long Beach, CA</p>
+                                <p><?php echo $location_fields['address']; ?></p>
                             </div>
-                            <span class="inline-block bg-[#C3B3F6] text-black px-4 py-2 mb-0 h5">Long Beach</span>
+                            <span class="inline-block text-black px-4 py-2 mb-0 h5" style="background-color: <?php echo $location_fields['primary_color']; ?>;"><?php echo $location_term->name; ?></span>
                         </div>
                     </div>
                 </a>
+                <?php endif; ?>
+                <?php $row_counter++; ?>
+                <?php endwhile; ?>
             </div>
         </div>
     </div>

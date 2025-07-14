@@ -26,6 +26,9 @@ if ( ! empty( $block['align'] ) ) {
 }
 
 $classes .= ' ' . get_field('bottom_margin');
+
+// Get the menus from ACF
+$menus = get_field('menus');
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
@@ -35,51 +38,72 @@ $classes .= ' ' . get_field('bottom_margin');
                 <h2 class="line">
                     Food + Drink
                 </h2>
+                <?php if ($menus): ?>
                 <p class="md:text-right max-w-[425px] m-0 menu-links">
-                    <a href="#" class="active">Food</a>
-                    <a href="#">N/A Beverages</a>
-                    <a href="#">Sunset Sips</a>
-                    <a href="#">House Cocktails</a>
-                    <a href="#">Beer</a>
-                    <a href="#">Wine</a>
-                    <a href="#">Bottle Menu</a>
+                    <?php foreach ($menus as $index => $menu): ?>
+                        <a href="#" class="<?php echo $index === 0 ? 'active' : ''; ?>" data-menu="<?php echo esc_attr($index); ?>"><?php echo esc_html($menu['name']); ?></a>
+                    <?php endforeach; ?>
                 </p>
+                <?php endif; ?>
             </div>
         </div>
 
         <div class="container menus">
-            <?php for($i=0;$i<7;$i++) : ?>
-            <div class="menu <?php echo $i == 0 ? 'block' : 'hidden'; ?>">
-                <div class="md:flex gap-16">
-                    <div class="basis-1/2">
-                        <h3>Food by Bear Fish Flag co. <?php echo $i; ?></h3>
-                        <div class="menu-item mb-10">
-                            <div class="flex justify-between mb-4">
-                                <p class="h4 mb-0">AL Pastor-Dilla</p>
-                                <p class="h4 mb-0">$14</p>
+            <?php if ($menus): ?>
+                <?php foreach ($menus as $index => $menu): ?>
+                    <div class="menu <?php echo $index === 0 ? 'block' : 'hidden'; ?>">
+                        <div class="md:flex gap-16">
+                            <?php if ($menu['left_column']): ?>
+                            <div class="basis-1/2">
+                                <?php if ($menu['left_column']['header']): ?>
+                                    <h3><?php echo esc_html($menu['left_column']['header']); ?></h3>
+                                <?php endif; ?>
+
+                                <?php if ($menu['left_column']['menu_items']): ?>
+                                    <?php foreach ($menu['left_column']['menu_items'] as $item): ?>
+                                        <div class="menu-item mb-10">
+                                            <div class="flex justify-between mb-4">
+                                                <p class="h4 mb-0"><?php echo esc_html($item['name']); ?></p>
+                                                <?php if (!empty($item['price'])): ?>
+                                                    <p class="h4 mb-0"><?php echo esc_html($item['price']); ?></p>
+                                                <?php endif; ?>
+                                            </div>
+                                            <?php if ($item['description']): ?>
+                                                <p><?php echo esc_html($item['description']); ?></p>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
                             </div>
-                            <p>A spicy quesadilla filled with shredded mozzarella cheese, Al Pastor marinated pork, chopped jalapeno peppers, fresh cilantro and Diablo sauce.</p>
-                        </div>
-                        <div class="menu-item mb-10">
-                            <div class="flex justify-between mb-4">
-                                <p class="h4 mb-0">AL Pastor-Dilla</p>
-                                <p class="h4 mb-0">$14</p>
+                            <?php endif; ?>
+
+                            <?php if ($menu['right_column']): ?>
+                            <div class="basis-1/2">
+                                <?php if ($menu['right_column']['header']): ?>
+                                    <h3><?php echo esc_html($menu['right_column']['header']); ?></h3>
+                                <?php endif; ?>
+
+                                <?php if ($menu['right_column']['menu_items']): ?>
+                                    <?php foreach ($menu['right_column']['menu_items'] as $item): ?>
+                                        <div class="menu-item mb-10">
+                                            <div class="flex justify-between mb-4">
+                                                <p class="h4 mb-0"><?php echo esc_html($item['name']); ?></p>
+                                                <?php if (!empty($item['price'])): ?>
+                                                    <p class="h4 mb-0"><?php echo esc_html($item['price']); ?></p>
+                                                <?php endif; ?>
+                                            </div>
+                                            <?php if ($item['description']): ?>
+                                                <p><?php echo esc_html($item['description']); ?></p>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
                             </div>
-                            <p>A spicy quesadilla filled with shredded mozzarella cheese, Al Pastor marinated pork, chopped jalapeno peppers, fresh cilantro and Diablo sauce.</p>
+                            <?php endif; ?>
                         </div>
                     </div>
-                    <div class="basis-1/2">
-                        <div class="menu-item mb-10">
-                            <div class="flex justify-between mb-4">
-                                <p class="h4 mb-0">AL Pastor-Dilla</p>
-                                <p class="h4 mb-0">$14</p>
-                            </div>
-                            <p>A spicy quesadilla filled with shredded mozzarella cheese, Al Pastor marinated pork, chopped jalapeno peppers, fresh cilantro and Diablo sauce.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php endfor; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </div>
 </div>
