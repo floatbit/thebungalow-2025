@@ -26,12 +26,17 @@ if ( ! empty( $block['align'] ) ) {
 }
 
 $classes .= ' ' . get_field('bottom_margin');
+
+// Get the image field
+$image = get_field('image');
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <p>
-            <img src="https://placehold.co/1280x776/222/fff" alt="" class="w-full">
-        </p>
+        <?php if ($image): ?>
+            <p>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="w-full">
+            </p>
+        <?php endif; ?>
     </div>
 </div>

@@ -12,11 +12,10 @@
                 </div>
                 <div class="links hidden md:flex flex-grow justify-between ml-[50px] lg:ml-[88px] max-w-[944px] mb-[10px]">
                     <a href="/" class="home">Home</a>
-                    <a href="/about">About</a>
-                    <a href="/menu">Menu</a>
-                    <a href="/happenings">Happenings</a>
-                    <a href="/private-events">Private Events</a>
-                    <a href="/info">Info</a>
+                    <?php $nav_links = get_location_nav_links(); ?>
+                    <?php foreach ($nav_links as $link): ?>
+                        <a href="<?php echo $link['link']['url']; ?>" class="<?php echo $link['link']['target'] == '_blank' ? 'external' : ''; ?>"><?php echo $link['link']['title']; ?></a>
+                    <?php endforeach; ?>
                 </div>
                 <a class="mobile-toggle btn inline-block md:hidden" href="#">Menu</a>
             </div>

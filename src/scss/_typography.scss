@@ -10,6 +10,11 @@
     letter-spacing: 0.05em;
   }
 
+  ol, ul {
+    margin-left: 1em;
+    list-style-type: disc;
+  }
+
   h1, h2, h3, h4, h5,
   .h1, .h2, .h3, .h4, .h5,
   %h1, %h2, %h3, %h4, %h5 {

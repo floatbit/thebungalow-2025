@@ -31,38 +31,27 @@ $classes .= ' ' . get_field('bottom_margin');
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
-        <div class="">
-                <p class="mb-10">
-                    <img src="https://placehold.co/800x800/222/fff" alt="" class="max-w-[400px]">
-                </p>
-                <p class="h2 line">
-                    A lively <br>community
-                </p>
-                <p>
-                    Never a dull moment here—this is your inside scoop on all the events happening at The Bungalow Santa Monica. From laid-back happy hours and live DJs to our Weekly Trivia Night and Annual Night Market, we're all about setting the scene for you to relax, connect, and make unforgettable memories.
-                </p>
-                <p class="links flex gap-4">
-                    <a href="#">View Calendar</a>
-                    <a href="#">Become a Resident</a>
-                </p>
-
-            </div>
+            <?php while(have_rows('sets')): the_row(); ?>
+            <?php $image = get_sub_field('image'); ?>
             <div class="">
                 <p class="mb-10">
-                    <img src="https://placehold.co/800x800/222/fff" alt="" class="max-w-[400px]">
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="max-w-[400px]">
                 </p>
                 <p class="h2 line">
-                    Gather &<br>Celebrate
+                    <?php the_sub_field('title'); ?>
                 </p>
-                <p>
-                    Never a dull moment here—this is your inside scoop on all the events happening at The Bungalow Santa Monica. From laid-back happy hours and live DJs to our Weekly Trivia Night and Annual Night Market, we're all about setting the scene for you to relax, connect, and make unforgettable memories.
-                </p>
-                <p class="links flex gap-4">
-                    <a href="#">View Calendar</a>
-                    <a href="#">Become a Resident</a>
-                </p>
+                <?php the_sub_field('description'); ?>
 
+                <?php $links = get_sub_field('links'); ?>
+                <?php if($links): ?>
+                <p class="links flex gap-4">
+                    <?php foreach($links as $link): ?>
+                        <a href="<?php echo $link['link']['url']; ?>" target="<?php echo $link['link']['target']; ?>"><?php echo $link['link']['title']; ?></a>
+                    <?php endforeach; ?>
+                </p>
+                <?php endif; ?>
             </div>
+            <?php endwhile; ?>
         </div>
     </div>
 </div>

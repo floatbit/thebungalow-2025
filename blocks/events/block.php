@@ -26,28 +26,47 @@ if ( ! empty( $block['align'] ) ) {
 }
 
 $classes .= ' ' . get_field('bottom_margin');
+
+$options = array();
+$options['start-date'] = date('m/d/Y');
+$options['locations'] = get_field('locations');
+$events = get_events($options);
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <?php for($i=0;$i<3;$i++) : ?>
+        <?php if (count($events) ==  0) : ?>
+        <p><?php the_field('no_events_message'); ?></p>
+        <?php endif; ?>
+        <?php foreach ($events as $event) : ?>
+        <?php $event = get_post($event->ID); ?>
         <div class="event mb-10">
             <div class="flex gap-12 items-center">
                 <div class="basis-4/12">
-                    <img src="https://placehold.co/780x930/999/fff" alt="">
+                    <img src="<?php echo get_the_post_thumbnail_url($event->ID); ?>" alt="">
                 </div>
                 <div class="basis-9/12">
-                    <p class="mb-6">May 20, 2025 - August 31, 2025</p>
-                    <p class="h2">Night Market at the Bungalow</p>
-                    <p class="max-w-[634px]">
-                        Get ready to experience the ultimate foodie event of the summer with new food vendors, beverage activations, family-friendly activities, live musical and DJ performances, and celebrity guest appearances. Free and open to the public for guests of all ages and pet friendly, The Bungalow's Night Market kicks off Thursday, June 6, and will run every Thursday from 5-11 p.m. through August 29.
+                    <p class="mb-6">
+                    <?php $event_time = get_event_readable_time($event);?>
+                    <?php if (get_field('custom_date_time', $event->ID)):?>
+                        <?php print get_field('custom_date_time', $event->ID);?>
+                    <?php else:?>
+                        <?php print get_event_readable_date($event->ID);?><?php print $event_time ? ', ' . $event_time : '';?>
+                    <?php endif;?>
                     </p>
-                    <p>
-                        <a href="#" class="btn">Learn More</a>
-                    </p>
+                    <p class="h2"><?php echo $event->post_title; ?></p>
+                    <div class="max-w-[634px]">
+                        <?php print apply_filters('the_content', $event->post_content); ?>
+                    </div>
+                    <?php $cta_link = get_field('cta_link', $event->ID); ?>
+                    <?php if ($cta_link) : ?>
+                        <p class="mt-8">
+                            <a href="<?php echo $cta_link['url']; ?>" class="btn"><?php echo $cta_link['title']; ?></a>
+                        </p>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
-        <?php endfor; ?>
+        <?php endforeach; ?>
     </div>
 </div>

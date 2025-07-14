@@ -26,12 +26,24 @@ if ( ! empty( $block['align'] ) ) {
 }
 
 $classes .= ' ' . get_field('bottom_margin');
+
+$links = get_field('links');
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <p class="text-center">
-            <a class="btn" href="#">View Our Menus</a>
-        </p>
+        <?php if ($links): ?>
+            <p class="text-center flex justify-center gap-x-4">
+                <?php foreach ($links as $link_item):
+                    $link = $link_item['link'];
+                    if ($link):
+                ?>
+                    <a class="btn" href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target']); ?>"><?php echo esc_html($link['title']); ?></a>
+                <?php 
+                    endif;
+                endforeach; 
+                ?>
+            </p>
+        <?php endif; ?>
     </div>
 </div> 

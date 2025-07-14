@@ -50,4 +50,31 @@ import FoodDrink from '@/blocks/food-drink'
     }
   })
 
+  // hash on page load
+  var hash = window.location.hash
+  if (hash) {
+    const jumpLinkId = hash.replace('#', '')
+    const jumpLinkTarget = document.querySelector(`.acf-block[data-jump-link-id="${jumpLinkId}"]`)
+    if (jumpLinkTarget) {
+      const yOffset = -100; 
+      const y = jumpLinkTarget.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({top: y, behavior: 'smooth'});
+    }
+  }
+
+  // hash click
+  document.querySelectorAll('a[href*="#"]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const jumpLinkId = el.hash.replace('#', '');
+      const jumpLinkTarget = document.querySelector(`.acf-block[data-jump-link-id="${jumpLinkId}"]`);
+      if (jumpLinkTarget) {
+        e.preventDefault();
+        const yOffset = 0;
+        const y = jumpLinkTarget.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+      }
+    })
+  })
+
 })($)

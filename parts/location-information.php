@@ -1,36 +1,4 @@
-<?php
-/**
- * Block template file: block.php
- *
- * Location Information Block Template.
- *
- * @param   array $block The block settings and attributes.
- * @param   string $content The block inner HTML (empty).
- * @param   bool $is_preview True during AJAX preview.
- * @param   (int|string) $post_id The post ID this block is saved to.
- */
-
-// Create id attribute allowing for custom "anchor" value.
-$id = 'location-information-' . $block['id'];
-if ( ! empty($block['anchor'] ) ) {
-    $id = $block['anchor'];
-}
-
-// Create class attribute allowing for custom "className" and "align" values.
-$classes = 'acf-block block-location-information';
-if ( ! empty( $block['className'] ) ) {
-    $classes .= ' ' . $block['className'];
-}
-if ( ! empty( $block['align'] ) ) {
-    $classes .= ' align' . $block['align'];
-}
-
-$classes .= ' ' . get_field('bottom_margin');
-
-$location_fields = get_location_fields();
-?>
-
-<div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
+<div class="location-information">
     <div class="bg-primary text-primary-dark pt-20 pb-[1px]">
         <div class="container">
             <div class="flex flex-col md:flex-row gap-12">

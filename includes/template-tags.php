@@ -96,3 +96,109 @@ function get_location_fields($tid = null) {
 
     return $fields;
 }
+
+function get_location_nav_links() {
+    $location_fields = get_location_fields();
+    return $location_fields['nav_links'];
+}
+
+function get_events($options) {
+    $args = array(
+        'post_type'      => 'tribe_events',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+        'orderby' => 'meta_value',
+        'meta_key' => '_EventEndDate',
+        'order' => 'ASC',
+    );
+    $tax_query = array();
+    if (isset($options['tribe_events_cat'])) {
+        $tax_query[] =  array(
+            'taxonomy' => 'tribe_events_cat',
+            'field' => 'term_id',
+            'terms' => $options['tribe_events_cat']
+        );
+        $args['tax_query'] = $tax_query;
+    }
+    $meta_query = array();
+    if ($options['start-date']) {
+        $start_date = date('Y-m-d H:i:s', strtotime($options['start-date']));
+        $meta_query[] = array(
+            'key' => '_EventEndDate',
+            'compare' => '>=',
+            'value' => $start_date,
+            'type' => 'DATETIME'
+        );
+    }
+    if ($options['past-events-only']) {
+        $meta_query[] = array(
+            'key' => '_EventEndDate',
+            'compare' => '<',
+            'value' => date('Y-m-d H:i:s'),
+            'type' => 'DATETIME'
+        );
+    }
+    if ($meta_query) {
+        $args['meta_query'] = $meta_query;
+    }
+    $posts = get_posts($args);
+    return $posts;
+}
+
+function get_event_readable_date($event) {
+    $start = tribe_get_start_date( $event, false, 'Y-m-d' );
+    $end = tribe_get_end_date( $event, false, 'Y-m-d' );
+    if ($start == $end) {
+      return tribe_get_start_date( $event, false, 'F j, Y' );
+    } else if (time() < strtotime($start)) {
+      return sprintf('%s – %s', tribe_get_start_date( $event, false, 'F j, Y' ), tribe_get_end_date( $event, false, 'F j, Y' ));
+    } else {
+      return sprintf('%s – %s', tribe_get_start_date( $event, false, 'F j, Y' ), tribe_get_end_date( $event, false, 'F j, Y' ));
+    }
+  }
+  
+  function get_event_readable_time($event) {
+    $start_time = tribe_get_start_time($event);
+    $end_time = tribe_get_end_time($event);
+    if (empty($start_time) && empty($end_time)) {
+      $time = '';
+    } else if ($start_time == $end_time) {
+      $time = $start_time;
+    } else {
+      $time = sprintf('%s – %s', $start_time, $end_time);
+    }
+    return $time;
+  }
+  
+  
+function location_hours_shortcode() {
+    $location_fields = get_location_fields();
+    $hours_html = '<p>';
+    foreach($location_fields['days_hours'] as $field):
+        $hours_html .= $field['day'] . ': ' . $field['hours'] . '<br>';
+    endforeach;
+    $hours_html .= '</p>';
+    return $hours_html;
+}
+add_shortcode('location-hours', 'location_hours_shortcode');
+  
+function location_address_shortcode() {
+    $location_fields = get_location_fields();
+    if ( ! empty( $location_fields['address'] ) ) {
+        return '<p>' . $location_fields['address'] . '</p>';
+    }
+    return '';
+}
+add_shortcode('location-address', 'location_address_shortcode');
+
+function location_directions_shortcode() {
+    $location_fields = get_location_fields();
+    if ( ! empty( $location_fields['directions_url'] ) ) {
+        $link = $location_fields['directions_url'];
+        return '<p><a href="' . esc_url( $link ) . '" target="_blank">GET DIRECTIONS</a></p>';
+    }
+    return '';
+}
+add_shortcode('location-directions', 'location_directions_shortcode');
+  
+  
