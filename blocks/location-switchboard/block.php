@@ -32,7 +32,11 @@ $classes .= ' ' . get_field('bottom_margin');
 
     <div class="container mb-10">
         <div class="relative max-w-[764px] mx-auto">
-            <img src="<?php print assets_url('/dist/images/LongBeachHero_LargeSalmon 1.svg'); ?>" alt="">
+            <?php 
+                $random_illustration_pool = get_field('random_illustration'); 
+                $random_illustration = $random_illustration_pool[array_rand($random_illustration_pool)];
+            ?>
+            <img src="<?php print $random_illustration['url']; ?>" alt="<?php print $random_illustration['alt']; ?>" class="aspect-[630/450] w-full h-full object-contain">
             <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full h1"><?php the_field('title'); ?></p>
         </div>
     </div>

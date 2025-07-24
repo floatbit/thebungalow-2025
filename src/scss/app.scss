@@ -121,6 +121,11 @@ header {
       @apply no-underline block my-5;
     }
   }
+  .location-information {
+    .footer-image {
+      @apply hidden;
+    }
+  }
 
 }
 
@@ -157,5 +162,9 @@ header {
       a:hover {
           @apply underline;
       }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
   }
 }  

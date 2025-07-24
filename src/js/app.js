@@ -70,7 +70,7 @@ import FoodDrink from '@/blocks/food-drink'
       const jumpLinkTarget = document.querySelector(`.acf-block[data-jump-link-id="${jumpLinkId}"]`);
       if (jumpLinkTarget) {
         e.preventDefault();
-        const yOffset = 0;
+        const yOffset = -100;
         const y = jumpLinkTarget.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({top: y, behavior: 'smooth'});
       }
