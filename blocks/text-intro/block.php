@@ -26,12 +26,73 @@ if ( ! empty( $block['align'] ) ) {
 }
 
 $classes .= ' ' . get_field('bottom_margin');
+
+// Get ACF fields
+$title_small = get_field('title_small');
+$title_large = get_field('title_large');
+$title_with_line = get_field('title_with_line');
+$text = get_field('text');
+$links = get_field('links');
+$image = get_field('image');
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/text-intro
-        </h2>
+        <div class="flex gap-6 justify-between">
+            <div class="<?php echo $image ? 'basis-[55%]' : 'basis-full'; ?>">
+                <div class="text <?php echo $image ? 'text-image' : 'text-no-image'; ?>">
+                    
+                    <?php if ($title_small): ?>
+                        <h1 class="p"><?php echo esc_html($title_small); ?></h1>
+                    <?php endif; ?>
+
+                    <?php if ($title_large): ?>
+                        <?php if ($title_small): ?>
+                            <h2><?php echo esc_html($title_small); ?></h2>
+                        <?php else: ?>
+                            <h1><?php echo esc_html($title_large); ?></h1>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                    
+                    <?php if ($title_with_line): ?>
+                        <p class="h1">
+                            <span class="inline-block line">
+                                <?php echo $title_with_line; ?>
+                            </span>
+                        </p>
+                    <?php endif; ?>
+                    
+                    <?php if ($text): ?>
+                        <div class="text-content">
+                            <?php echo $text; ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($links): ?>
+                        <p class="flex gap-6 items-center">
+                            <?php foreach ($links as $link_item): 
+                                $link = $link_item['link'];
+                                $style_button = $link_item['style_button'];
+                                
+                                if ($link):
+                                    $link_class = $style_button ? 'btn btn-secondary' : '';
+                            ?>
+                                <a <?php echo $link_class ? 'class="' . esc_attr($link_class) . '"' : ''; ?> 
+                                   href="<?php echo esc_url($link['url']); ?>"
+                                   target="<?php echo esc_attr($link['target']); ?>">
+                                    <?php echo esc_html($link['title']); ?>
+                                </a>
+                            <?php endif; ?>
+                            <?php endforeach; ?>
+                        </p>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php if ($image): ?>
+                <div class="basis-[45%]">
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                </div>
+            <?php endif; ?>
+        </div>
     </div>
 </div>

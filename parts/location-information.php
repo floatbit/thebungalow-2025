@@ -4,8 +4,8 @@
 <div class="location-information">
     <div class="bg-primary text-primary-dark pt-20 pb-[1px]">
         <div class="container">
-            <div class="flex flex-col md:flex-row gap-12">
-                <!-- Column 1: Image (about 1/2 width) -->
+            <div class="flex flex-col md:flex-row gap-6 md:gap-12">
+                <!-- Column 1: Image (about 1/2 width)-->
                 <div class="w-full basis-6/12 flex-shrink-0 mb-8 md:mb-0 footer-image">
                     <?php $footer_image = $location_fields['footer_image']; ?>
                     <?php if ($footer_image) : ?>
@@ -15,14 +15,13 @@
                 <!-- Column 2: Links (about 1/4 width) -->
                 <div class="w-full md:basis-2/12">
                     <div class="flex md:block gap-12">
-                        <div class="basis-6/12">
+                        <div class="basis-6/12 md:mb-10">
                             <p class="h4">Info</p>
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Happenings</a></li>
-                                <li><a href="#">Private Events</a></li>
-                                <li><a href="#">Contact</a></li>
+                            <?php $nav_links = get_location_nav_links(); ?>
+                            <?php foreach ($nav_links as $link): ?>
+                                <li><a href="<?php echo $link['link']['url']; ?>" class="<?php echo $link['link']['target'] == '_blank' ? 'external' : ''; ?>"><?php echo $link['link']['title']; ?></a></li>
+                            <?php endforeach; ?>
                             </ul>
                         </div>
                         <div class="basis-6/12">

@@ -19,6 +19,7 @@ define('CUSTOM_BLOCKS', [
         'events-past',
         'text-box',
         'links',
+        'centered-text',
     ],
     'post' => [
         'text',
@@ -38,6 +39,7 @@ define('CUSTOM_BLOCKS', [
         'events-past',
         'text-box',
         'links',
+        'centered-text',
     ],
 ]);
 

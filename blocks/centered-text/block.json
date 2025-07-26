@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/centered-text",
+  "title": "Centered Text",
+  "description": "",
+  "category": "text",
+  "keywords": ["centered-text"],
+  "_viewScript": ["blocks/centered-text"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

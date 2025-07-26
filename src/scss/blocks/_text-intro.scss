@@ -1,5 +1,22 @@
 .block-text-intro {
     .container {
         max-width: 1328px;
-    }    // Styles for this block will go here
+    }
+    .text-image {
+        @apply relative;
+        @screen md {
+            @apply w-[calc(100%+105px)];
+        }
+    }
+    .text-no-image {
+        .text-content {
+            @apply max-w-[835px];
+        }
+    }
+    h2 {
+        @extend %h1;      
+    }
+    .line {
+        @apply max-w-[1084px];
+    }
 } 
