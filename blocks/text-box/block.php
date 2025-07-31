@@ -30,11 +30,11 @@ $classes .= ' ' . get_field('bottom_margin');
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <div class="flex gap-[100px] justify-between">
+        <div class="md:flex gap-[100px] justify-between">
             <div class="w-[610px]">
                <?php the_field('left_text'); ?>
             </div>
-            <div class="w-[442px]">
+            <div class="md:w-[442px]">
                 <div class="bg-secondary text-secondary-dark p-10 box">
                     <?php the_field('right_text'); ?>
                 </div>

@@ -41,9 +41,11 @@ $events = get_events($options);
         <?php foreach ($events as $event) : ?>
         <?php $event = get_post($event->ID); ?>
         <div class="event mb-10">
-            <div class="flex gap-12 items-center">
+            <div class="md:flex gap-12 items-center">
                 <div class="basis-4/12">
-                    <img src="<?php echo get_the_post_thumbnail_url($event->ID); ?>" alt="">
+                    <p>
+                        <img src="<?php echo get_the_post_thumbnail_url($event->ID); ?>" alt="">
+                    </p>
                 </div>
                 <div class="basis-9/12">
                     <p class="mb-6">
@@ -59,9 +61,15 @@ $events = get_events($options);
                         <?php print apply_filters('the_content', $event->post_content); ?>
                     </div>
                     <?php $cta_link = get_field('cta_link', $event->ID); ?>
-                    <?php if ($cta_link) : ?>
-                        <p class="mt-8">
-                            <a href="<?php echo $cta_link['url']; ?>" class="btn"><?php echo $cta_link['title']; ?></a>
+                    <?php $cta_link_2 = get_field('cta_link_2', $event->ID); ?>
+                    <?php if ($cta_link || $cta_link_2) : ?>
+                        <p class="mt-8 flex gap-4">
+                            <?php if ($cta_link) : ?>
+                                <a href="<?php echo $cta_link['url']; ?>" class="btn"><?php echo $cta_link['title']; ?></a>
+                            <?php endif; ?>
+                            <?php if ($cta_link_2) : ?>
+                                <a href="<?php echo $cta_link_2['url']; ?>" class="btn"><?php echo $cta_link_2['title']; ?></a>
+                            <?php endif; ?>
                         </p>
                     <?php endif; ?>
                 </div>

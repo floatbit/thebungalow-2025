@@ -45,7 +45,7 @@ $images = get_field('images');
                                     <?php if ($first_slide): ?>
                                         <div class="mask"></div>
                                     <?php endif; ?>
-                                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="aspect-[1280/720]">
+                                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="aspect-square md:aspect-[1280/720]">
                                 </div>
                                 <?php $first_slide = false; ?>
                             <?php endif; ?>
@@ -53,7 +53,7 @@ $images = get_field('images');
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="dots-container absolute left-6 bottom-6 z-20">
+            <div class="dots-container absolute left-4 md:left-6 bottom-4 md:bottom-6 z-20">
                 <div class="dots"></div>
             </div>
         </div>

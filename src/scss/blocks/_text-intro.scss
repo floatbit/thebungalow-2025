@@ -19,4 +19,13 @@
     .line {
         @apply max-w-[1084px];
     }
+    h1.p,
+    p.h1 {
+        br {
+            display: none;
+            @screen md {
+                display: inline-block;
+            }
+        }
+    }
 } 

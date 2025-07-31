@@ -35,7 +35,7 @@ $text = get_field('text');
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
         <div class="text">
-            <h1 class="text-center mb-20">
+            <h1 class="text-center mb-10 md:mb-20">
                 <span class="inline-block line mx-auto">
                     <?php echo $title; ?>
                 </span>

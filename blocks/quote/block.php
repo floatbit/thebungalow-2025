@@ -32,7 +32,7 @@ $name = get_field('name');
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
-    <div class="bg-secondary text-secondary-dark pt-12 pb-4">
+    <div class="bg-secondary text-secondary-dark quote-container">
         <div class="container">
             <?php if ($quote_text): ?>
             <p class="h3 quote mb-5">
@@ -40,7 +40,7 @@ $name = get_field('name');
             </p>
             <?php endif; ?>
             <?php if ($name): ?>
-            <p class="author">
+            <p class="m-0 author">
                 — <?php echo esc_html($name); ?>
             </p>
             <?php endif; ?>

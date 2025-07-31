@@ -30,12 +30,12 @@ $classes .= ' ' . get_field('bottom_margin');
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20">
             <?php while(have_rows('sets')): the_row(); ?>
             <?php $image = get_sub_field('image'); ?>
             <div class="">
                 <p class="mb-10">
-                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="max-w-[400px]">
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
                 </p>
                 <p class="h2 line">
                     <?php the_sub_field('title'); ?>

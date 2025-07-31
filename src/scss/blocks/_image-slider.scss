@@ -41,7 +41,7 @@
     }
 
     .swiper-pagination-bullet {
-        @apply bg-white rounded-full w-[12px] h-[12px] inline-block;
+        @apply bg-white rounded-full w-[8px] h-[8px] md:w-[12px] md:h-[12px] inline-block;
     }
 
     .swiper-pagination-bullet-active,

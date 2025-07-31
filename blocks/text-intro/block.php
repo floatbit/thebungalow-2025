@@ -38,7 +38,7 @@ $image = get_field('image');
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <div class="flex gap-6 justify-between">
+        <div class="md:flex gap-6 justify-between">
             <div class="<?php echo $image ? 'basis-[55%]' : 'basis-full'; ?>">
                 <div class="text <?php echo $image ? 'text-image' : 'text-no-image'; ?>">
                     
@@ -89,7 +89,7 @@ $image = get_field('image');
                 </div>
             </div>
             <?php if ($image): ?>
-                <div class="basis-[45%]">
+                <div class="basis-[45%] hidden md:block">
                     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
                 </div>
             <?php endif; ?>

@@ -28,7 +28,7 @@ a:hover {
 .line {
   @apply relative;
   svg {
-    @apply absolute right-[-30px] bottom-[-10px];
+    @apply absolute right-[-20px] bottom-[-10px] w-full;
     @screen md {
       @apply right-[-60px];
     }
@@ -54,7 +54,11 @@ a:hover {
 }
 
 header {
-  @apply duration-[450ms] ease-in-out mb-14;
+  @apply duration-[450ms] ease-in-out;
+  @include pixelsToResponsiveUnit(margin-bottom, 0px, 56px, 56px);
+  @media (max-width: 767px) {
+    margin-bottom: 10px;
+  }
   .logo {
     img {
       @apply duration-[450ms] transition-all;

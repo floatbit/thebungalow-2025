@@ -1,4 +1,8 @@
 .block-quote {
+    .quote-container {
+        @include pixelsToResponsiveUnit(padding-top, 48px, 48px, 48px);
+        @include pixelsToResponsiveUnit(padding-bottom, 48px, 48px, 48px);
+    }
     .container {
         max-width: 1328px;
     }
@@ -8,6 +12,9 @@
     }
     span:nth-child(1) {
         @apply absolute;
-        left: -1rem;
+        left: -0.9rem;
+        @screen md {
+            left: -1rem;
+        }
     }
 } 

@@ -5,7 +5,10 @@
     #tripleseat_embed_form {
         h2 {
             @extend %h3;
-            @apply mt-10 mb-0;
+            @apply mt-5 mb-0;
+            @screen md {
+                @apply mt-10;
+            }
         }
         label {
             @extend %p;
@@ -13,7 +16,10 @@
         }
         td {
             padding: 0;
-            @apply pb-8 w-full;
+            @apply pb-4 w-full;
+            @screen md {
+                @apply pb-8;
+            }
         }
         input[type=text],
         #lead_phone_number {

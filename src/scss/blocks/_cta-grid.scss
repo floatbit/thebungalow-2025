@@ -4,4 +4,7 @@
         @apply absolute right-auto bottom-0 left-[30px];
     }
   }
+  img {
+    @include pixelsToResponsiveUnit(max-width, 280px, 400px, 400px);
+  }
 } 

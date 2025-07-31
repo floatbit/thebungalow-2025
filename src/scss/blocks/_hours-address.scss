@@ -1,4 +1,8 @@
 .block-hours-address {
+    .container {
+        @include pixelsToResponsiveUnit(padding-top, 60px, 128px, 128px);
+        @include pixelsToResponsiveUnit(padding-bottom, 60px, 128px, 128px);
+    }
     .line {
         svg {
             @apply static mx-auto;

@@ -20,6 +20,23 @@
             "allow_in_bindings": 0
         },
         {
+            "key": "field_688b8b834f7d0",
+            "label": "Call to Action Link 2",
+            "name": "cta_link_2",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
             "key": "field_6875454b157b4",
             "label": "Custom Date and Time",
             "name": "custom_date_time",
@@ -59,5 +76,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752517043
+    "modified": 1753975810
 }

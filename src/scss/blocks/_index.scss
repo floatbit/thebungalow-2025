@@ -22,7 +22,7 @@
 }
 
 .block-bottom-margin-small {
-  @apply mb-8;
+  @apply mb-5;
   @screen md {
     @apply mb-10;
   }
@@ -36,14 +36,14 @@
 }
 
 .block-bottom-margin-large {
-  @apply mb-[60px];
+  @apply mb-[40px];
   @screen md {
     @apply mb-[120px];
   }
 }
 
 .block-bottom-margin-extra-large {
-  @apply mb-14;
+  @apply mb-[60px];
   @screen md {
     @apply mb-[180px];
   }

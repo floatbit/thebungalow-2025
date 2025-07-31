@@ -39,6 +39,7 @@ $events = get_events($options);
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
+        <h2 class="h1 mb-10 md:mb-20">Past Events</h2>
         <?php if (count($events) ==  0) : ?>
         <p><?php the_field('no_events_message'); ?></p>
         <?php endif; ?>
@@ -62,12 +63,6 @@ $events = get_events($options);
                     <div class="max-w-[634px]">
                         <?php print apply_filters('the_content', $event->post_content); ?>
                     </div>
-                    <?php $cta_link = get_field('cta_link', $event->ID); ?>
-                    <?php if ($cta_link) : ?>
-                        <p class="mt-8">
-                            <a href="<?php echo $cta_link['url']; ?>" class="btn"><?php echo $cta_link['title']; ?></a>
-                        </p>
-                    <?php endif; ?>
                 </div>
             </div>
         </div>

@@ -32,14 +32,14 @@ $menus = get_field('menus');
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>" data-jump-link-id="<?php echo get_field('jump_link_id'); ?>">
-    <div class="bg-primary text-primary-dark py-32">
-        <div class="container mb-16">
+    <div class="bg-primary text-primary-dark food-drink-container">
+        <div class="container mb-6 md:mb-16">
             <div class="flex flex-col md:flex-row md:justify-between md:items-center">
                 <h2 class="line">
-                    Food + Drink
+                    Food & <br class="block md:hidden">Drink
                 </h2>
                 <?php if ($menus): ?>
-                <p class="md:text-right max-w-[425px] m-0 menu-links">
+                <p class="text-center md:text-right max-w-[425px] m-0 mt-2 md:mt-0 menu-links">
                     <?php foreach ($menus as $index => $menu): ?>
                         <a href="#" class="<?php echo $index === 0 ? 'active' : ''; ?>" data-menu="<?php echo esc_attr($index); ?>"><?php echo esc_html($menu['name']); ?></a>
                     <?php endforeach; ?>
