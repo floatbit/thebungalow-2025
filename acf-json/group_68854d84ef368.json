@@ -147,6 +147,28 @@
                     "ui_off_text": "",
                     "ui": 1,
                     "parent_repeater": "field_68854d9885e5e"
+                },
+                {
+                    "key": "field_688d3546b356a",
+                    "label": "Link to File",
+                    "name": "file",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_68854d9885e5e"
                 }
             ]
         },
@@ -195,5 +217,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753568320
+    "modified": 1754084777
 }

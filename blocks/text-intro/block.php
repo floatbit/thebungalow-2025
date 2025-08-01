@@ -73,12 +73,19 @@ $image = get_field('image');
                             <?php foreach ($links as $link_item): 
                                 $link = $link_item['link'];
                                 $style_button = $link_item['style_button'];
+                                $file = $link_item['file'];
+
+                                if ($file) {
+                                    $href = $file['url'];
+                                } else if ($link) {
+                                    $href = $link['url'];
+                                }
                                 
                                 if ($link):
                                     $link_class = $style_button ? 'btn btn-secondary' : '';
                             ?>
                                 <a <?php echo $link_class ? 'class="' . esc_attr($link_class) . '"' : ''; ?> 
-                                   href="<?php echo esc_url($link['url']); ?>"
+                                   href="<?php echo esc_url($href); ?>"
                                    target="<?php echo esc_attr($link['target']); ?>">
                                     <?php echo esc_html($link['title']); ?>
                                 </a>

@@ -43,7 +43,7 @@ import FoodDrink from '@/blocks/food-drink'
 
   // header
   window.addEventListener('scroll', () => {
-    if (window.scrollY >= 100) {
+    if (window.scrollY >= 200) {
       document.body.classList.add('header-minimized')
     } else {
       document.body.classList.remove('header-minimized')

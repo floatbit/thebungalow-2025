@@ -28,7 +28,7 @@ if ( ! empty( $block['align'] ) ) {
 $classes .= ' ' . get_field('bottom_margin');
 ?>
 
-<div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
+<div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>" data-jump-link-id="<?php echo get_field('jump_link_id'); ?>">
     <div class="container">
         <h2>Submit an Inquiry</h2>
         <script src="https://api.tripleseat.com/v1/leads/ts_script.js?lead_form_id=29699&public_key=d23829038a0fd8ca95244f115bab6c16979afa42"></script>
