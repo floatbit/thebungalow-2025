@@ -6,6 +6,8 @@ export default class EventsPast {
         this.currentPage = 1;
         this.isLoading = false;
         this.blockId = this.el.getAttribute('id');
+        // Get locations data from data attribute
+        this.locations = this.el.dataset.locations;
         
         this.init();
     }
@@ -54,7 +56,8 @@ export default class EventsPast {
                     action: 'load_past_events',
                     page: page,
                     block_id: this.blockId,
-                    nonce: window.wpAjax.nonce
+                    nonce: window.wpAjax.nonce,
+                    locations: this.locations
                 })
             });
 

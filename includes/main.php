@@ -167,8 +167,8 @@ function handle_load_past_events() {
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
     $block_id = isset($_POST['block_id']) ? sanitize_text_field($_POST['block_id']) : '';
 
-    // Get block field values
-    $locations = get_field('locations', $block_id);
+    // Get locations from AJAX request
+    $locations = isset($_POST['locations']) ? json_decode(stripslashes($_POST['locations']), true) : null;
 
     // Get events with pagination
     $options = array(

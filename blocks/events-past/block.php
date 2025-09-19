@@ -44,7 +44,7 @@ $result = get_events($options);
 $events = $result['posts'];
 ?>
 
-<div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
+<div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>" data-locations="<?php echo esc_attr(json_encode(get_field('locations'))); ?>">
     <div class="container">
         <h2 class="h1 mb-10 md:mb-20">Past Events</h2>
         <?php if (count($events) ==  0) : ?>
