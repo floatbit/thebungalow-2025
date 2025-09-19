@@ -41,7 +41,7 @@ $events = get_events($options);
         <?php foreach ($events as $event) : ?>
         <?php $event = get_post($event->ID); ?>
         <div class="event mb-10">
-            <div class="md:flex gap-12 items-center">
+            <div class="md:flex gap-12">
                 <div class="basis-4/12">
                     <p>
                         <img src="<?php echo get_the_post_thumbnail_url($event->ID); ?>" alt="">

@@ -1,6 +1,7 @@
 import $ from 'jquery'
 import ImageSlider from '@/blocks/image-slider'
 import FoodDrink from '@/blocks/food-drink'
+import EventsPast from '@/blocks/events-past'
 
 (function ($) {
   
@@ -10,6 +11,10 @@ import FoodDrink from '@/blocks/food-drink'
 
   document.querySelectorAll('.block-food-drink').forEach(el => {
     new FoodDrink(el)
+  })
+
+  document.querySelectorAll('.block-events-past').forEach(el => {
+    new EventsPast(el)
   })
 
   document.querySelectorAll('.mobile-toggle').forEach(el => {

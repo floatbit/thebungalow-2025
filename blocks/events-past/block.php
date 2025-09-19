@@ -46,7 +46,7 @@ $events = get_events($options);
         <?php foreach ($events as $event) : ?>
         <?php $event = get_post($event->ID); ?>
         <div class="event mb-10">
-            <div class="flex gap-12 items-center">
+            <div class="flex gap-12">
                 <div class="basis-4/12">
                     <img src="<?php echo get_the_post_thumbnail_url($event->ID); ?>" alt="">
                 </div>
@@ -67,5 +67,23 @@ $events = get_events($options);
             </div>
         </div>
         <?php endforeach; ?>
+    </div>
+
+    <div class="container pagination">
+        <div class="flex gap-12 justify-between">
+            <p>
+                <a href="#">Newer</a>
+            </p>
+            <p class="flex gap-4">
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <span>...</span>
+                <a href="#">10</a>
+            </p>
+            <p>
+                <a href="#">Older</a>
+            </p>
+        </div>
     </div>
 </div>

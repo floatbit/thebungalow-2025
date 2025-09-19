@@ -108,8 +108,8 @@ function get_events($options) {
         'post_status'    => 'publish',
         'posts_per_page' => -1,
         'orderby' => 'meta_value',
-        'meta_key' => '_EventEndDate',
-        'order' => 'ASC',
+        'meta_key' => '_EventStartDate',
+        'order' => isset($options['past-events-only']) && $options['past-events-only'] ? 'DESC' : 'ASC',
     );
     $tax_query = array();
     if (isset($options['tribe_events_cat'])) {
@@ -137,6 +137,7 @@ function get_events($options) {
             'value' => date('Y-m-d H:i:s'),
             'type' => 'DATETIME'
         );
+        
     }
     if ($meta_query) {
         $args['meta_query'] = $meta_query;
