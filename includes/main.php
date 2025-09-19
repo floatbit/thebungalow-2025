@@ -167,6 +167,9 @@ function handle_load_past_events() {
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
     $block_id = isset($_POST['block_id']) ? sanitize_text_field($_POST['block_id']) : '';
 
+    // Get block field values
+    $locations = get_field('locations', $block_id);
+
     // Get events with pagination
     $options = array(
         'past-events-only' => true,
@@ -174,6 +177,10 @@ function handle_load_past_events() {
         'page' => $page,
         'per_page' => 10
     );
+
+    if ($locations) {
+        $options['locations'] = $locations;
+    }
 
     $result = get_events($options);
     

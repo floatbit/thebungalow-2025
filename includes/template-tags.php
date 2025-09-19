@@ -119,12 +119,30 @@ function get_events($options) {
         'order'          => isset($options['past-events-only']) && $options['past-events-only'] ? 'DESC' : 'ASC',
     );
     $tax_query = array();
+    
+    // Add tribe_events_cat taxonomy query
     if (isset($options['tribe_events_cat'])) {
-        $tax_query[] =  array(
+        $tax_query[] = array(
             'taxonomy' => 'tribe_events_cat',
             'field' => 'term_id',
             'terms' => $options['tribe_events_cat']
         );
+    }
+    
+    // Add locations taxonomy query
+    if (isset($options['locations'])) {
+        $tax_query[] = array(
+            'taxonomy' => 'location',
+            'field' => 'term_id',
+            'terms' => $options['locations']
+        );
+    }
+    
+    // Apply tax query if we have any taxonomies
+    if (!empty($tax_query)) {
+        if (count($tax_query) > 1) {
+            $tax_query['relation'] = 'AND';
+        }
         $args['tax_query'] = $tax_query;
     }
     $meta_query = array();
