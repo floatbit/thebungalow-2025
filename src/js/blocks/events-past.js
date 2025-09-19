@@ -64,21 +64,26 @@ export default class EventsPast {
             const data = await response.json();
             
             if (data.success) {
-                // Update events container with the html from response
-                this.eventsContainer.innerHTML = data.data.html;
-                // Update pagination with the pagination from response
-                this.pagination.innerHTML = data.data.pagination;
-                this.currentPage = page;
-                
-                if (updateHistory) {
-                    const url = new URL(window.location);
-                    url.searchParams.set('page', page);
-                    url.hash = this.blockId;
-                    history.pushState({ page, blockId: this.blockId }, '', url);
-                }
-                
-                // Smooth scroll to top of events section
-                this.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Scroll first
+                const yOffset = -100;
+                const y = this.el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+
+                // Update content after a brief delay to ensure scroll completes
+                setTimeout(() => {
+                    // Update events container with the html from response
+                    this.eventsContainer.innerHTML = data.data.html;
+                    // Update pagination with the pagination from response
+                    this.pagination.innerHTML = data.data.pagination;
+                    this.currentPage = page;
+                    
+                    if (updateHistory) {
+                        const url = new URL(window.location);
+                        url.searchParams.set('page', page);
+                        url.hash = this.blockId;
+                        history.pushState({ page, blockId: this.blockId }, '', url);
+                    }
+                }, 600);
             } else {
                 console.error('Failed to load events:', data.message);
             }
