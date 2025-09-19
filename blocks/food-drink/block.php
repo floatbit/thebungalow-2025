@@ -93,7 +93,7 @@ $menus = get_field('menus');
                                                 <?php endif; ?>
                                             </div>
                                             <?php if ($item['description']): ?>
-                                                <p><?php echo esc_html($item['description']); ?></p>
+                                                <p><?php echo nl2br($item['description']); ?></p>
                                             <?php endif; ?>
                                         </div>
                                     <?php endforeach; ?>
