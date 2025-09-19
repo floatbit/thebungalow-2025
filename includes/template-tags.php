@@ -103,13 +103,20 @@ function get_location_nav_links() {
 }
 
 function get_events($options) {
+    // Check if pagination is requested
+    $use_pagination = isset($options['paginate']) && $options['paginate'];
+    
+    $per_page = isset($options['per_page']) ? intval($options['per_page']) : 10;
+    $current_page = isset($options['page']) ? max(1, intval($options['page'])) : 1;
+    
     $args = array(
         'post_type'      => 'tribe_events',
         'post_status'    => 'publish',
-        'posts_per_page' => -1,
-        'orderby' => 'meta_value',
-        'meta_key' => '_EventStartDate',
-        'order' => isset($options['past-events-only']) && $options['past-events-only'] ? 'DESC' : 'ASC',
+        'posts_per_page' => $use_pagination ? $per_page : -1,
+        'paged'          => $use_pagination ? $current_page : 1,
+        'orderby'        => 'meta_value',
+        'meta_key'       => '_EventStartDate',
+        'order'          => isset($options['past-events-only']) && $options['past-events-only'] ? 'DESC' : 'ASC',
     );
     $tax_query = array();
     if (isset($options['tribe_events_cat'])) {
@@ -142,7 +149,25 @@ function get_events($options) {
     if ($meta_query) {
         $args['meta_query'] = $meta_query;
     }
-    $posts = get_posts($args);
+    // Get posts
+    $query = new WP_Query($args);
+    $posts = $query->posts;
+    wp_reset_postdata();
+
+    // Return different formats based on pagination
+    if ($use_pagination) {
+        $total_posts = $query->found_posts;
+        return array(
+            'posts' => $posts,
+            'pagination' => array(
+                'total_posts' => $total_posts,
+                'total_pages' => ceil($total_posts / $per_page),
+                'current_page' => $current_page,
+                'per_page' => $per_page
+            )
+        );
+    }
+
     return $posts;
 }
 

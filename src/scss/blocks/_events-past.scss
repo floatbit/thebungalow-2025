@@ -1,3 +1,15 @@
 .block-events-past {
+    .pagination {
+        a {
 
-} 
+            &:hover {
+                color: var(--color-primary-dark);
+            }
+
+            &.current {
+                color: var(--color-secondary);
+                pointer-events: none;
+            }
+        }
+    }
+}

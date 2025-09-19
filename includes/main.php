@@ -29,6 +29,12 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('app', assets_url('/dist/app.css'), [], null);
     wp_enqueue_script('app', assets_url('/dist/app.js'), ['jquery'], null, true);
 
+    // Add AJAX URL and nonce for events pagination
+    wp_localize_script('app', 'wpAjax', array(
+        'url' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('events_pagination_nonce')
+    ));
+
     // Register script for blocks
     // If needed, separate the script per block
     wp_register_script('blocks/text', assets_url('/dist/blocks/text.js'), ['jquery'], null, true);
@@ -147,3 +153,111 @@ function thebungalow_body_class($classes) {
     return $classes;
 }
 add_filter('body_class', 'thebungalow_body_class');
+
+/**
+ * AJAX handler for past events pagination
+ */
+function handle_load_past_events() {
+    // Verify nonce
+    if (!check_ajax_referer('events_pagination_nonce', 'nonce', false)) {
+        wp_send_json_error('Invalid nonce');
+        return;
+    }
+
+    $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+    $block_id = isset($_POST['block_id']) ? sanitize_text_field($_POST['block_id']) : '';
+
+    // Get events with pagination
+    $options = array(
+        'past-events-only' => true,
+        'paginate' => true,
+        'page' => $page,
+        'per_page' => 10
+    );
+
+    $result = get_events($options);
+    
+    ob_start();
+    
+    // Render events HTML
+    if (count($result['posts']) > 0) {
+        foreach ($result['posts'] as $event) {
+            $event = get_post($event->ID);
+            ?>
+            <div class="event mb-10">
+                <div class="md:flex gap-12">
+                    <div class="basis-4/12">
+                        <p class="mb-2">
+                            <img src="<?php echo get_the_post_thumbnail_url($event->ID); ?>" alt="">
+                        </p>
+                    </div>
+                    <div class="basis-9/12">
+                        <p class="mb-6">
+                        <?php $event_time = get_event_readable_time($event);?>
+                        <?php if (get_field('custom_date_time', $event->ID)):?>
+                            <?php print get_field('custom_date_time', $event->ID);?>
+                        <?php else:?>
+                            <?php print get_event_readable_date($event->ID);?><?php print $event_time ? ', ' . $event_time : '';?>
+                        <?php endif;?>
+                        </p>
+                        <p class="h2"><?php echo $event->post_title; ?></p>
+                        <div class="max-w-[634px]">
+                            <?php print apply_filters('the_content', $event->post_content); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php
+        }
+    } else {
+        echo '<p>' . get_field('no_events_message', $block_id) . '</p>';
+    }
+    
+    $events_html = ob_get_clean();
+    
+    // Generate pagination HTML
+    ob_start();
+    $total_pages = $result['pagination']['total_pages'];
+    $current_page = $result['pagination']['current_page'];
+    ?>
+    <div class="flex gap-12 justify-between">
+        <p>
+            <?php if ($current_page > 1): ?>
+                <a href="#" data-page="newer">Newer</a>
+            <?php endif; ?>
+        </p>
+        <p class="flex gap-4">
+            <?php
+            $show_dots_start = false;
+            $show_dots_end = false;
+            
+            for ($i = 1; $i <= $total_pages; $i++) {
+                if ($i == 1 || $i == $total_pages || ($i >= $current_page - 1 && $i <= $current_page + 1)) {
+                    echo '<a href="#" data-page="' . $i . '"' . ($i == $current_page ? ' class="current"' : '') . '>' . $i . '</a>';
+                } elseif ($i < $current_page - 1 && !$show_dots_start) {
+                    echo '<span>...</span>';
+                    $show_dots_start = true;
+                } elseif ($i > $current_page + 1 && !$show_dots_end) {
+                    echo '<span>...</span>';
+                    $show_dots_end = true;
+                }
+            }
+            ?>
+        </p>
+        <p>
+            <?php if ($current_page < $total_pages): ?>
+                <a href="#" data-page="older">Older</a>
+            <?php endif; ?>
+        </p>
+    </div>
+    <?php
+    $pagination_html = ob_get_clean();
+
+    wp_send_json_success(array(
+        'html' => $events_html,
+        'pagination' => $pagination_html
+    ));
+}
+
+add_action('wp_ajax_load_past_events', 'handle_load_past_events');
+add_action('wp_ajax_nopriv_load_past_events', 'handle_load_past_events');
