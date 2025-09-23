@@ -3,6 +3,9 @@
         max-width: 994px;
     }
     #tripleseat_embed_form {
+        table {
+            width: 100%;
+        }
         h2 {
             @extend %h3;
             @apply mt-5 mb-0;
