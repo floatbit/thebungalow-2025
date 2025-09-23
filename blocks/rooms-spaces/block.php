@@ -45,7 +45,7 @@ $sets = get_field('sets');
                                 </p>
                             <?php endif; ?>
                         </div>
-                        <div class="basis-9/12">
+                        <div class="basis-6/12">
                             <?php if ($set['name']) : ?>
                                 <p class="h2"><?php echo esc_html($set['name']); ?></p>
                             <?php endif; ?>
