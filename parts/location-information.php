@@ -44,6 +44,11 @@
                         <a href="<?php echo $location_fields['directions_url']; ?>" target="_blank">Get Directions</a>
                     </p>
                     <p class="h4">Hours</p>
+                    <?php if ($location_fields['hours_intro']) { ?>
+                        <p>
+                            <?php echo $location_fields['hours_intro']; ?>
+                        </p>
+                    <?php } ?>
                     <p>
                         <?php foreach($location_fields['days_hours'] as $field): ?>
                             <?php echo $field['day']; ?>: <?php echo $field['hours']; ?><br>

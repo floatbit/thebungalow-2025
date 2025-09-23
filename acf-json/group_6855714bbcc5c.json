@@ -326,6 +326,27 @@
             "selected": 0
         },
         {
+            "key": "field_68d2d224ebde6",
+            "label": "Hours Intro",
+            "name": "hours_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
             "key": "field_6861af252c6b5",
             "label": "Days & Hours",
             "name": "days_hours",
@@ -528,5 +549,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1758646350
+    "modified": 1758647058
 }
