@@ -44,7 +44,11 @@ $classes .= ' ' . get_field('bottom_margin');
     <div class="container mb-10 relative mt-[-65px]">
         <div class="flex justify-center">
             <div class="max-w-[706px] text-center">
-                <?php the_field('intro_text'); ?>
+                <?php if (get_field('intro_text')): ?>
+                    <?php the_field('intro_text'); ?>
+                <?php else: ?>
+                    <p>&nbsp;</p>
+                <?php endif; ?>
             </div>
         </div>    
     </div>
@@ -70,8 +74,10 @@ $classes .= ' ' . get_field('bottom_margin');
                             <div class="text-white font-mono text-sm">
                                 <p><?php echo $location_fields['address']; ?></p>
                             </div>
-                            <span class="whitespace-nowrap inline-block text-black px-4 py-2 mb-0 h5" style="background-color: <?php echo $location_fields['primary_color']; ?>;"><?php echo $location_term->name; ?></span>
                         </div>
+                    </div>
+                    <div class="absolute top-0 left-0 p-6 w-full">
+                        <span class="whitespace-nowrap inline-block text-black p-4 mb-0 h4" style="background-color: <?php echo $location_fields['primary_color']; ?>;"><?php echo $location_term->name; ?></span>
                     </div>
                 </a>
                 <?php else: ?>
@@ -83,8 +89,10 @@ $classes .= ' ' . get_field('bottom_margin');
                             <div class="text-white font-mono text-sm">
                                 <p><?php echo $location_fields['address']; ?></p>
                             </div>
-                            <span class="whitespace-nowrap inline-block text-black px-4 py-2 mb-0 h5" style="background-color: <?php echo $location_fields['primary_color']; ?>;"><?php echo $location_term->name; ?></span>
                         </div>
+                    </div>
+                    <div class="absolute top-0 left-0 p-6 w-full">
+                        <span class="whitespace-nowrap inline-block text-black p-4 mb-0 h4" style="background-color: <?php echo $location_fields['primary_color']; ?>;"><?php echo $location_term->name; ?></span>
                     </div>
                 </a>
                 <?php endif; ?>
@@ -111,8 +119,10 @@ $classes .= ' ' . get_field('bottom_margin');
                             <div class="text-white font-mono text-sm">
                                 <p><?php echo $location_fields['address']; ?></p>
                             </div>
-                            <span class="whitespace-nowrap inline-block text-black px-4 py-2 mb-0 h5" style="background-color: <?php echo $location_fields['primary_color']; ?>;"><?php echo $location_term->name; ?></span>
                         </div>
+                    </div>
+                    <div class="absolute top-0 left-0 p-6 w-full">
+                        <span class="whitespace-nowrap inline-block text-black p-4 mb-0 h4" style="background-color: <?php echo $location_fields['primary_color']; ?>;"><?php echo $location_term->name; ?></span>
                     </div>
                 </a>
                 <?php else: ?>
@@ -124,8 +134,10 @@ $classes .= ' ' . get_field('bottom_margin');
                             <div class="text-white font-mono text-sm">
                                 <p><?php echo $location_fields['address']; ?></p>
                             </div>
-                            <span class="whitespace-nowrap inline-block text-black px-4 py-2 mb-0 h5" style="background-color: <?php echo $location_fields['primary_color']; ?>;"><?php echo $location_term->name; ?></span>
                         </div>
+                    </div>
+                    <div class="absolute top-0 left-0 p-6 w-full">
+                        <span class="whitespace-nowrap inline-block text-black p-4 mb-0 h4" style="background-color: <?php echo $location_fields['primary_color']; ?>;"><?php echo $location_term->name; ?></span>
                     </div>
                 </a>
                 <?php endif; ?>

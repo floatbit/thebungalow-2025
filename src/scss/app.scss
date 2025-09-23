@@ -28,7 +28,7 @@ a:hover {
 .line {
   @apply relative;
   svg {
-    @apply absolute right-[-20px] bottom-[-10px] w-full;
+    @apply absolute right-[-20px] bottom-[-20px] w-full;
     @screen md {
       @apply right-[-60px];
     }

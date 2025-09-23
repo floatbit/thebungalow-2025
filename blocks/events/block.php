@@ -40,7 +40,7 @@ $events = get_events($options);
         <?php endif; ?>
         <?php foreach ($events as $event) : ?>
         <?php $event = get_post($event->ID); ?>
-        <div class="event mb-10">
+        <div class="event mb-20">
             <div class="md:flex gap-12">
                 <div class="basis-4/12">
                     <p>

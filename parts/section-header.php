@@ -1,17 +1,18 @@
 <?php
     $logo = get_location_logo();
+    $parent = wp_get_post_parent_id(get_the_ID());
 ?>
 <header class="sticky top-0 z-50 bg-white">
     <div class="container">
         <div class="relative">
             <div class="flex items-center justify-between py-[20px]">
                 <div class="logo">
-                    <a href="/">
+                    <a href="<?php echo $parent ? get_the_permalink($parent) : get_the_permalink(get_the_ID()); ?>">
                         <img src="<?php echo $logo['url']; ?>" alt="Logo">
                     </a>
                 </div>
                 <div class="links hidden md:flex flex-grow justify-between ml-[50px] lg:ml-[88px] max-w-[944px] mb-[10px]">
-                    <a href="/" class="home">Home</a>
+                    <a href="<?php echo $parent ? get_the_permalink($parent) : get_the_permalink(get_the_ID()); ?>" class="home">Home</a>
                     <?php $nav_links = get_location_nav_links(); ?>
                     <?php foreach ($nav_links as $link): ?>
                         <a href="<?php echo $link['link']['url']; ?>" class="<?php echo $link['link']['target'] == '_blank' ? 'external' : ''; ?>"><?php echo $link['link']['title']; ?></a>

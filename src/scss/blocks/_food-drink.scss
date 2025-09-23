@@ -20,9 +20,9 @@
     }
     .line {
         svg {
-            @apply absolute bottom-[-10px] right-[0px];
+            @apply absolute bottom-[-20px] right-[0px];
             @screen md {
-                @apply bottom-[-15px] right-[-100px];
+                @apply bottom-[-25px] right-[-100px];
             }
             path {
                 fill: var(--color-secondary);
