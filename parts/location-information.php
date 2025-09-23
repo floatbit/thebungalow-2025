@@ -42,8 +42,11 @@
                     <p>
                         <?php echo $location_fields['address']; ?>
                     </p>
+                    <?php if ($location_fields['directions_url']) { ?>
                     <p>
                         <a href="<?php echo $location_fields['directions_url']; ?>" target="_blank">Get Directions</a>
+                    </p>
+                    <?php } ?>
                     </p>
                     <p class="h4">Hours</p>
                     <?php if ($location_fields['hours_intro']) { ?>
@@ -51,11 +54,13 @@
                             <?php echo $location_fields['hours_intro']; ?>
                         </p>
                     <?php } ?>
+                    <?php if ($location_fields['days_hours']) { ?>
                     <p>
                         <?php foreach($location_fields['days_hours'] as $field): ?>
                             <?php echo $field['day']; ?>: <?php echo $field['hours']; ?><br>
                         <?php endforeach; ?>
                     </p>
+                    <?php } ?>
                     <?php if ($location_fields['phone_number']) { ?>
                         <p class="h4">Call Us</p>
                         <p>
