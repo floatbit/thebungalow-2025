@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/rooms-spaces",
+  "title": "Rooms + Spaces",
+  "description": "",
+  "category": "thebungalow",
+  "keywords": ["rooms-spaces"],
+  "_viewScript": ["blocks/rooms-spaces"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

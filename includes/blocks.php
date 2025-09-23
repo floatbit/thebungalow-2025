@@ -20,6 +20,7 @@ define('CUSTOM_BLOCKS', [
         'text-box',
         'links',
         'centered-text',
+        'rooms-spaces',
     ],
     'post' => [
         'text',
