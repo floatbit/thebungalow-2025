@@ -32,6 +32,9 @@ a:hover {
     @screen md {
       @apply right-[-60px];
     }
+    path {
+      fill: var(--color-secondary);
+    }
   }
 }
 

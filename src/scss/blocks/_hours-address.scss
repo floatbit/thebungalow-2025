@@ -6,6 +6,9 @@
     .line {
         svg {
             @apply static mx-auto;
+            path {
+                fill: var(--color-primary);
+            }
         }
     }
     .h2{
