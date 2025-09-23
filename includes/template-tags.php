@@ -64,6 +64,11 @@ function is_location() {
     return get_location_logo();
 }
 
+function is_coming_soon() {
+    $location_fields = get_location_fields();
+    return $location_fields['coming_soon'];
+}
+
 function get_location_fields($tid = null) {
     $fields = [];
 

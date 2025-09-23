@@ -185,6 +185,27 @@
             "selected": 0
         },
         {
+            "key": "field_68d2d0397585b",
+            "label": "Coming Soon",
+            "name": "coming_soon",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_6861b09b9c802",
             "label": "Address",
             "name": "address",
@@ -507,5 +528,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753391193
+    "modified": 1758646350
 }

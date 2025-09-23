@@ -12,8 +12,14 @@
 
 
     <?php if (is_location()) { ?>
-        <?php get_template_part('parts/section-header'); ?>
-        <?php get_template_part('parts/mobile-menu'); ?>
+        <?php if (is_coming_soon()): ?>
+            <div class="<?php echo is_front_page() ? 'pt-10 md:pt-20' : 'pt-10 md:pt-20 mb-16'; ?>">
+                <?php get_template_part('parts/centered-logo'); ?>
+            </div>
+        <?php else:?>
+            <?php get_template_part('parts/section-header'); ?>
+            <?php get_template_part('parts/mobile-menu'); ?>
+        <?php endif;?>
     <?php } else { ?>
         <div class="<?php echo is_front_page() ? 'pt-10 md:pt-20' : 'pt-10 md:pt-20 mb-16'; ?>">
             <?php get_template_part('parts/centered-logo'); ?>
