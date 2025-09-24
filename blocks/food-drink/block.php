@@ -56,7 +56,7 @@ $menus = get_field('menus');
                             <?php if ($menu['left_column']): ?>
                             <div class="basis-1/2">
                                 <?php if ($menu['left_column']['header']): ?>
-                                    <h3><?php echo esc_html($menu['left_column']['header']); ?></h3>
+                                    <h3><?php echo $menu['left_column']['header']; ?></h3>
                                 <?php endif; ?>
 
                                 <?php if ($menu['left_column']['menu_items']): ?>
@@ -80,7 +80,7 @@ $menus = get_field('menus');
                             <?php if ($menu['right_column']): ?>
                             <div class="basis-1/2">
                                 <?php if ($menu['right_column']['header']): ?>
-                                    <h3><?php echo esc_html($menu['right_column']['header']); ?></h3>
+                                    <h3><?php echo $menu['right_column']['header']; ?></h3>
                                 <?php endif; ?>
 
                                 <?php if ($menu['right_column']['menu_items']): ?>
