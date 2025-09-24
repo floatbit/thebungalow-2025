@@ -36,7 +36,9 @@ $classes .= ' ' . get_field('bottom_margin');
                 <?php foreach($row['images'] as $image):?>
                 <div class="image" style="flex: <?php print $image['image']['width'] / $image['image']['height'];?>;">
                     <img src="<?php print $image['image']['url'];?>" alt="">
-                    <p class="mt-2 text-center"><?php print $image['caption'];?></p>
+                    <?php if ($image['caption']): ?>
+                        <p class="mt-2 text-center"><?php print $image['caption'];?></p>
+                    <?php endif; ?>
                 </div>
                 <?php endforeach;?>
             </div>
