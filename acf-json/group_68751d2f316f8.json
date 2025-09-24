@@ -67,7 +67,7 @@
                             "label": "Header",
                             "name": "header",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -79,9 +79,9 @@
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
+                            "rows": 3,
                             "placeholder": "",
-                            "prepend": "",
-                            "append": ""
+                            "new_lines": "br"
                         },
                         {
                             "key": "field_68751ef7f1dae",
@@ -197,7 +197,7 @@
                             "label": "Header",
                             "name": "header",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -209,9 +209,9 @@
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
+                            "rows": 3,
                             "placeholder": "",
-                            "prepend": "",
-                            "append": ""
+                            "new_lines": "br"
                         },
                         {
                             "key": "field_6875206e4ba50",
@@ -327,5 +327,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752506484
+    "modified": 1758731294
 }
