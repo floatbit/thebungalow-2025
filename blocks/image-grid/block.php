@@ -32,7 +32,7 @@ $classes .= ' ' . get_field('bottom_margin');
     <div class="container">
         <?php $rows = get_field('image_sets');?>
         <?php foreach($rows as $index=>$row):?>
-            <div class="md:flex gap-x-12 gap-y-4 <?php print $index < count($rows) - 1 ? 'mb-10' : '';?>">
+            <div class="md:flex gap-x-12 gap-y-4 <?php print $index < count($rows) - 1 ? 'mb-12' : '';?>">
                 <?php foreach($row['images'] as $image):?>
                 <div class="image" style="flex: <?php print $image['image']['width'] / $image['image']['height'];?>;">
                     <img src="<?php print $image['image']['url'];?>" alt="">
