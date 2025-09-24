@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
+    <link rel="icon" href="<?php echo assets_url('/dist/images/favicon.png'); ?>" />
 </head>
 
 <body <?php body_class('antialiased'); ?>>
