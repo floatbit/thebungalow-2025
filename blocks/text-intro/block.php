@@ -69,7 +69,7 @@ $image = get_field('image');
                     <?php endif; ?>
 
                     <?php if ($links): ?>
-                        <p class="flex gap-6 items-center">
+                        <p class="flex gap-6 flex-wrap items-center">
                             <?php foreach ($links as $link_item): 
                                 $link = $link_item['link'];
                                 $style_button = $link_item['style_button'];

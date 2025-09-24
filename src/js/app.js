@@ -75,6 +75,19 @@ import EventsPast from '@/blocks/events-past'
       const jumpLinkTarget = document.querySelector(`.acf-block[data-jump-link-id="${jumpLinkId}"]`);
       if (jumpLinkTarget) {
         e.preventDefault();
+        
+        // Close mobile menu if open
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        if (mobileMenu.classList.contains('translate-y-0')) {
+          mobileMenu.classList.remove('translate-y-0');
+          mobileMenu.classList.add('-translate-y-full');
+          document.body.classList.remove('mobile-menu-open', 'overflow-hidden');
+          if (mobileToggle) {
+            mobileToggle.innerHTML = 'Menu';
+          }
+        }
+
         const yOffset = -100;
         const y = jumpLinkTarget.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({top: y, behavior: 'smooth'});
