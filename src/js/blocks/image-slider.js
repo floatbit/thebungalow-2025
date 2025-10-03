@@ -16,6 +16,7 @@ export default class ImageSlider {
             modules: [Pagination, EffectFade],
             loop: true,
             effect: 'fade',
+            speed: 0,
             slidesPerView: 1,
             spaceBetween: 0,
             centeredSlides: true,
