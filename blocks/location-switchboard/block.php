@@ -76,7 +76,7 @@ $classes .= ' ' . get_field('bottom_margin');
                             </div>
                         </div>
                     </div>
-                    <div class="absolute top-0 left-0 p-6 w-full">
+                    <div class="absolute top-0 right-0 p-6 w-full">
                         <span class="whitespace-nowrap inline-block text-black p-4 mb-0 h4" style="background-color: <?php echo $location_fields['primary_color']; ?>;"><?php echo $location_term->name; ?></span>
                     </div>
                 </a>
@@ -91,7 +91,7 @@ $classes .= ' ' . get_field('bottom_margin');
                             </div>
                         </div>
                     </div>
-                    <div class="absolute top-0 left-0 p-6 w-full">
+                    <div class="absolute top-0 right-0 p-6 w-full">
                         <span class="whitespace-nowrap inline-block text-black p-4 mb-0 h4" style="background-color: <?php echo $location_fields['primary_color']; ?>;"><?php echo $location_term->name; ?></span>
                     </div>
                 </a>
