@@ -32,6 +32,7 @@
         z-index: 1;
     }
     .swiper-slide img {
+        @apply object-cover;
         display: block;
         width: 100%;
     }
