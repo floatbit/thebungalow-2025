@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Pagination } from 'swiper/modules';
+import { Pagination, EffectFade } from 'swiper/modules';
 
 export default class ImageSlider { 
     constructor(el) {
@@ -15,6 +15,7 @@ export default class ImageSlider {
         const swiper = new Swiper(slideshow, {
             modules: [Pagination, EffectFade],
             loop: true,
+            effect: 'fade',
             slidesPerView: 1,
             spaceBetween: 0,
             centeredSlides: true,
