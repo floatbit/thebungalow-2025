@@ -71,23 +71,16 @@
                 </div>
             </div>
 
+            <?php $location_links = get_field('location_links', 'option'); ?>
             <div class="location-links mt-20 mb-10 md:mb-4">
                 <div class="flex flex-col md:flex-row gap-2 md:gap-20 justify-between">
+                    <?php foreach ($location_links as $link): ?>
                     <p class="h3">
-                        <a href="/huntington-beach">Huntington Beach</a>
+                        <a href="<?php echo $link['link']['url']; ?>"><?php echo $link['link']['title']; ?></a>
                     </p>
-                    <p class="h3">
-                        <a href="/santa-monica">Santa Monica</a>
-                    </p>
-                    <p class="h3">
-                        <a href="/long-beach">Long Beach</a>
-                    </p>
-                    <p class="h3">
-                        <a href="/san-diego">San Diego</a>
-                    </p>
+                    <?php endforeach; ?>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

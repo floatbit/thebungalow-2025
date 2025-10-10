@@ -19,6 +19,10 @@ add_action('after_setup_theme', function () {
             'page_title' => 'Global Options',
             'menu_slug' => 'global-options',
         ]);
+        acf_add_options_page([
+            'page_title' => 'Footer Settings',
+            'menu_slug' => 'footer-settings',
+        ]);
     }
 });
 
