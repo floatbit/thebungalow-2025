@@ -123,6 +123,12 @@ function get_events($options) {
         'meta_key'       => '_EventStartDate',
         'order'          => isset($options['past-events-only']) && $options['past-events-only'] ? 'DESC' : 'ASC',
     );
+
+    // Add featured events IDs query
+    if (isset($options['featured_events_ids'])) {
+        $args['post__not_in'] = $options['featured_events_ids'];
+    }
+
     $tax_query = array();
     
     // Add tribe_events_cat taxonomy query
@@ -189,6 +195,14 @@ function get_events($options) {
                 'per_page' => $per_page
             )
         );
+    }
+
+    if (isset($options['featured_events_ids'])) {
+        $featured_events_posts = array();
+        foreach ($options['featured_events_ids'] as $featured_event_id) {
+            $featured_events_posts[] = get_post($featured_event_id);
+        }
+        $posts = array_merge($featured_events_posts, $posts);
     }
 
     return $posts;

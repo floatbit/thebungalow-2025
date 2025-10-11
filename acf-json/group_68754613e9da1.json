@@ -69,6 +69,45 @@
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
+        },
+        {
+            "key": "field_68ea71f49f690",
+            "label": "Featured Events",
+            "name": "featured_events",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "Show these events first",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_687549bccaa0a",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "tribe_events"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -96,5 +135,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752517064
+    "modified": 1760195165
 }

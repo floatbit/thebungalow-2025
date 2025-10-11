@@ -30,6 +30,13 @@ $classes .= ' ' . get_field('bottom_margin');
 $options = array();
 $options['start-date'] = date('m/d/Y');
 $options['locations'] = get_field('locations');
+
+$featured_events = get_field('featured_events');
+
+if ($featured_events) {
+    $options['featured_events_ids'] = $featured_events;
+}
+
 $events = get_events($options);
 ?>
 
