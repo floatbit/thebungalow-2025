@@ -47,6 +47,28 @@
                     "parent_repeater": "field_68751d2f0cec8"
                 },
                 {
+                    "key": "field_68ea700d1de24",
+                    "label": "Main Header",
+                    "name": "main_header",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 3,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_68751d2f0cec8"
+                },
+                {
                     "key": "field_68751d590ceca",
                     "label": "Left Column",
                     "name": "left_column",
@@ -64,7 +86,7 @@
                     "sub_fields": [
                         {
                             "key": "field_68751e86aab17",
-                            "label": "Header",
+                            "label": "Column Header",
                             "name": "header",
                             "aria-label": "",
                             "type": "textarea",
@@ -194,7 +216,7 @@
                     "sub_fields": [
                         {
                             "key": "field_6875206e4ba4f",
-                            "label": "Header",
+                            "label": "Column Header",
                             "name": "header",
                             "aria-label": "",
                             "type": "textarea",
@@ -327,5 +349,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1758731294
+    "modified": 1760194779
 }

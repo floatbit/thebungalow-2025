@@ -52,6 +52,9 @@ $menus = get_field('menus');
             <?php if ($menus): ?>
                 <?php foreach ($menus as $index => $menu): ?>
                     <div class="menu <?php echo $index === 0 ? 'block' : 'hidden'; ?>">
+                        <?php if ($menu['main_header']): ?>
+                            <h3 class="mb-10 menu-main-header"><?php echo $menu['main_header']; ?></h3>
+                        <?php endif; ?>
                         <div class="md:flex gap-16">
                             <?php if ($menu['left_column']): ?>
                             <div class="basis-1/2">

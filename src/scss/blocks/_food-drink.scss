@@ -37,4 +37,7 @@
     p.menu-links {
         @include pixelsToResponsiveUnit(font-size, 14px, 14px, 14px);
     }
+    .menu-main-header {
+        @include pixelsToResponsiveUnit(font-size, 32px, 36px, 36px);
+    }
 } 
