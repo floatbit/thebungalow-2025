@@ -35,7 +35,7 @@ $classes .= ' ' . get_field('bottom_margin');
                <?php the_field('left_text'); ?>
             </div>
             <div class="md:w-[442px]">
-                <div class="bg-secondary text-secondary-dark p-10 box">
+                <div class="bg-secondary text-black p-10 box">
                     <?php the_field('right_text'); ?>
                 </div>
             </div>

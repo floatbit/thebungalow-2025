@@ -34,7 +34,7 @@ $location_fields = get_location_fields();
     <div class="bg-secondary">
         <div class="container">
             <div class="md:flex items-center justify-between">
-                <div class="basis-6/12 md:basis-5/12 text-secondary-dark text-center">
+                <div class="basis-6/12 md:basis-5/12 text-black text-center">
                     <div class="line mb-5"></div>
                     <?php $left = get_field('left_text');?>
                     <p><?php echo $left['top']; ?></p>
