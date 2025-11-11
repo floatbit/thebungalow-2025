@@ -47,13 +47,50 @@ import EventsPast from '@/blocks/events-past'
   })
 
   // header
-  window.addEventListener('scroll', () => {
-    if (window.scrollY >= 200) {
-      document.body.classList.add('header-minimized')
-    } else {
-      document.body.classList.remove('header-minimized')
+  let lastKnownState = window.scrollY >= 200 ? 'minimized' : 'expanded'
+  let lastUpdateTime = 0
+  
+  // Initialize state on page load
+  if (lastKnownState === 'minimized') {
+    document.body.classList.add('header-minimized')
+  }
+  
+  const updateHeaderState = () => {
+    const now = Date.now()
+    const timeSinceLastUpdate = now - lastUpdateTime
+    
+    // Throttle to max once every 150ms to prevent rapid changes
+    if (timeSinceLastUpdate < 150) {
+      return
     }
-  })
+    
+    const scrollY = window.scrollY
+    let newState
+    
+    // Very large hysteresis buffer: add at 220px, remove at 100px
+    if (scrollY >= 220) {
+      newState = 'minimized'
+    } else if (scrollY <= 100) {
+      newState = 'expanded'
+    } else {
+      // In the buffer zone (100-220px), don't change anything
+      return
+    }
+    
+    // Only update if state actually needs to change
+    if (newState !== lastKnownState) {
+      if (newState === 'minimized') {
+        document.body.classList.add('header-minimized')
+      } else {
+        document.body.classList.remove('header-minimized')
+      }
+      lastKnownState = newState
+      lastUpdateTime = now
+    }
+  }
+  
+  // Use passive listener for better scroll performance
+  window.addEventListener('scroll', updateHeaderState, { passive: true })
 
   // hash on page load
   var hash = window.location.hash
