@@ -18,6 +18,7 @@
                 <?php get_template_part('parts/centered-logo'); ?>
             </div>
         <?php else:?>
+            <?php get_template_part('parts/announcement'); ?>
             <?php get_template_part('parts/section-header'); ?>
             <?php get_template_part('parts/mobile-menu'); ?>
         <?php endif;?>
