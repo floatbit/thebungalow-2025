@@ -6,9 +6,8 @@
         <p class="text-center md:text-left">
             In the Bay Area? Check out <a href="https://bungalowkitchen.com/" target="_blank">The Bungalow Kitchen!</a>
         </p>
-        <p class="text-center md:text-left hidden">
-            <a href="/terms" class="mr-4">Terms</a>
-            <a href="/privacy">Privacy</a>
+        <p class="text-center md:text-left">
+            <a href="/terms" class="mr-4">Terms & Conditions</a>
         </p>
     </div>
 </div>
