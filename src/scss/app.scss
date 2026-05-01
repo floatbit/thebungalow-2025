@@ -184,3 +184,20 @@ header {
     width: 100%;
   }
 }
+
+.popup {
+  @apply flex justify-center items-center fixed inset-0;
+  background-color: rgba(0, 0, 0, 0.90);
+  z-index: 1000;
+  .image-container {
+    width: 100%;
+    max-width: 90%;
+    height: 100vh;
+    @screen md {
+      max-width: 600px;
+    }
+  }
+  img {
+    @apply w-full h-full object-contain;
+  }
+}
