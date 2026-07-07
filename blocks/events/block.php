@@ -38,6 +38,12 @@ if ($featured_events) {
 }
 
 $events = get_events($options);
+
+foreach($events as $index=>$event) {
+    if (!isset($event->ID)) {
+        unset($events[$index]);
+    }
+}
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
