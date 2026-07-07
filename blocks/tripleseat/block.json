@@ -1,12 +1,15 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 3,
   "name": "acf/tripleseat",
   "title": "Tripleseat",
   "description": "",
-  "category": "<category>",
-  "keywords": ["tripleseat"],
-  "_viewScript": ["blocks/tripleseat"],
+  "category": "thebungalow",
+  "keywords": [
+    "tripleseat"
+  ],
+  "_viewScript": [
+    "blocks/tripleseat"
+  ],
   "acf": {
     "mode": "preview",
     "renderTemplate": "block.php"

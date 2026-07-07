@@ -1,12 +1,15 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 3,
   "name": "acf/text-box",
   "title": "Text + Box",
   "description": "",
-  "category": "<category>",
-  "keywords": ["text-box"],
-  "_viewScript": ["blocks/text-box"],
+  "category": "thebungalow",
+  "keywords": [
+    "text-box"
+  ],
+  "_viewScript": [
+    "blocks/text-box"
+  ],
   "acf": {
     "mode": "preview",
     "renderTemplate": "block.php"
