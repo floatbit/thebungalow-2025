@@ -47,6 +47,7 @@ const containerStyles = ({ addComponents }) => {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    './404.php',
     './footer.php',
     './header.php',
     './index.php',
